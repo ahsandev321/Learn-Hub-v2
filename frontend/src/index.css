@@ -1,0 +1,84 @@
+
+/*Import the Mulish font from google fonts.*/
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+/*Apply these styles to all elements.*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Mulish', sans-serif;
+}
+
+/*Create a light overlay behind the loading and error message.*/
+.error-section::before,
+.loading-section::before{
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(220, 218, 218);
+  z-index: 2;
+  opacity: 0.7;
+}
+
+/*Cover the full screen with the loading or error section. */
+.error-section,
+.loading-section{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*Style the loading and error message box.*/
+.error-title,
+.loading-title{
+  position: absolute;
+  width: auto;
+  height: 60px;
+  z-index: 500;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 17px;
+  background-color: rgb(124, 124, 124);
+}
+
+/*Change the message size on smaller screen.*/
+@media (max-width:610px) {
+
+  .error-title,
+.loading-title{
+  position: absolute;
+  width: auto;
+  height: 60px;
+  font-size: 12px;
+}
+
+ 
+    
+}
+
+/*Change the message on very small screen.*/
+@media (max-width:480px) {
+ .error-title,
+.loading-title{
+  position: absolute;
+  width: auto;
+  height: 60px;
+  font-size: 10px;
+}
+   
+    
+}

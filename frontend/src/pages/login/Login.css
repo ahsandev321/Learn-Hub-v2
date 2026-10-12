@@ -1,0 +1,287 @@
+/*Reset default spacing*/
+* {
+    padding: 0%;
+    margin: 0%;
+}
+
+/*Min login page.*/
+.login-main-container {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 100px;
+
+}
+
+/*Login form box.*/
+.login-main-section {
+    width: 700px;
+    height: auto;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    margin-top: 130px;
+    font-size: 15px;
+    text-align: center;
+    border: 2px solid gray;
+    border-radius: 20px;
+    background-color: rgb(238, 234, 234)
+}
+
+/*Input field area.*/
+.login-input-field-section {
+    width: 100%;
+    height: auto;
+    margin-top: 2%;
+
+
+}
+
+.login-field-section {
+    width: 100%;
+    height: 65px;
+
+}
+
+.login-field-button-section {
+    width: 100%;
+    height: auto;
+}
+
+/*Normal and invalid input style.*/
+.login-invalid-input,
+.login-input {
+    position: relative;
+    width: 70%;
+    height: 60px;
+    outline: none;
+    border: 2px solid rgb(163, 163, 163);
+    border-radius: 10px;
+    padding-top: 5px;
+    padding-left: 10px;
+    font-size: 18px;
+    transition: 0.3s;
+
+}
+
+/*Change input style when user click on it.*/
+.login-input:focus {
+    padding-top: 5px;
+    border: 2px solid rgb(2, 128, 2);
+    box-shadow: 0 0 5px rgb(0, 182, 0);
+    padding-left: 10px;
+    font-size: 18px;
+}
+
+/*Change input style for invalid input. */
+.login-invalid-input {
+    padding-top: 5px;
+    border: 2px solid red;
+    box-shadow: 0 0 5px rgb(229, 129, 129);
+    padding-left: 10px;
+    font-size: 18px;
+
+}
+
+/*Input placeholder text.*/
+.login-error-placeholer,
+.login-placeholer {
+    position: relative;
+    width: 70%;
+    height: auto;
+    text-align: start;
+    color: gray;
+    font-size: 12px;
+    margin-left: 17%;
+    margin-top: -42px;
+    pointer-events: none;
+    transition: 0.3s;
+}
+
+/*Move placeholder up when input is focused.*/
+.login-input:focus+.login-placeholer {
+    margin-top: -55px;
+    font-size: 10px;
+    color: green;
+}
+
+/*Mover error placeholder up*/
+.login-invalid-input:focus+.login-error-placeholer {
+    margin-top: -55px;
+    font-size: 10px;
+    color: red;
+}
+
+/*Keep placeholder up when input has data.*/
+.login-input:not(:placeholder-shown)+.login-placeholer {
+    margin-top: -55px;
+    font-size: 10px;
+
+}
+
+.login-invalid-input:not(:placeholder-shown)+.login-error-placeholer {
+    margin-top: -55px;
+    font-size: 10px;
+
+}
+
+/*hide show button when password is empty.*/
+.login-password-button-hide {
+    display: none;
+}
+
+/*Show hide password button.*/
+.login-password-button {
+    position: relative;
+    top: -5%;
+    left: 30%;
+    width: 50px;
+    height: 25px;
+    color: white;
+    background-color: gray;
+    border-radius: 5px;
+    border: 2px solid gray;
+    outline: none;
+}
+
+.login-password-button:active {
+    color: rgb(209, 207, 207);
+    background-color: rgb(84, 83, 83);
+}
+
+/*Password error message.*/
+.login-password-message {
+    color: red;
+}
+
+/*Login button.*/
+.login-button {
+    width: 70%;
+    height: 50px;
+    border-radius: 20px;
+    color: white;
+    border: 2px solid rgb(1, 79, 1);
+   background-color: rgb(2, 130, 2);
+    font-size: 20px;
+    margin-top: 30px;
+    outline: none;
+}
+
+/*Login button hover effect.*/
+.login-button:hover {
+    color: rgb(230, 229, 229);
+    border: 2px solid rgb(1, 79, 1);
+   background-color: rgb(2, 126, 2);
+    font-size: 20px;
+
+}
+
+/*Login button click effect.*/
+.login-button:active {
+    color: rgb(174, 172, 172);
+     border: 2px solid rgb(1, 79, 1);
+   background-color: rgb(2, 105, 2);
+    font-size: 20px;
+
+}
+
+/*Signup button.*/
+.login-signUp-button {
+    width: 70%;
+    height: 50px;
+    border-radius: 20px;
+    color: green;
+    border: 2px solid rgb(2, 104, 2);
+    background-color: white;
+    font-size: 20px;
+    margin-top: 50px;
+    outline: none;
+}
+
+/*Signup button hover effect.*/
+.login-signUp-button:hover {
+    color: rgb(2, 117, 2);
+    border: 2px solid rgb(1, 103, 1);
+    background-color: rgb(223, 222, 222);
+    font-size: 20px;
+
+}
+
+/*Signup button click effect.*/
+.login-signUp-button:active {
+    color: rgb(1, 94, 1);
+     border: 2px solid rgb(1, 79, 1);
+    background-color: rgb(174, 173, 173);
+    font-size: 20px;
+
+}
+
+/*Make login box smaller on tablet screens.*/
+@media (max-width:768px) {
+
+    .login-main-section {
+        width: 90%;
+        height: auto;
+        padding-top: 5%;
+        padding-bottom: 5%;
+        margin-top: 130px;
+
+    }
+
+
+
+}
+
+
+/*Change input size on smaller screens.*/
+@media (max-width:670px) {
+
+    .login-invalid-input,
+    .login-input {
+        position: relative;
+        width: 90%;
+        height: 60px;
+
+    }
+
+    /*Move palceholder on smaller screens*/
+    .login-error-placeholer,
+    .login-placeholer {
+        width: 70%;
+        height: auto;
+        margin-left: 7%;
+
+    }
+
+    /*Move password button.*/
+    .login-password-button {
+        position: relative;
+        top: -5%;
+        left: 37%;
+        width: 50px;
+        height: 25px;
+    }
+}
+
+/*Change login box for mobile.*/
+@media (max-width:480px) {
+
+    .login-main-section {
+        width: 90%;
+        height: auto;
+        padding-top: 5%;
+        padding-bottom: 5%;
+        margin-top: 120px;
+
+    }
+
+    /*Mover password button on mobile. */
+    .login-password-button {
+        position: relative;
+        top: -5%;
+        left: 34%;
+        width: 50px;
+        height: 25px;
+    }
+
+}

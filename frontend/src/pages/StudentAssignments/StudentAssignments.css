@@ -1,0 +1,176 @@
+/*Reset default browser spacing.*/
+* {
+    padding: 0%;
+    margin: 0%;
+}
+
+/*Main student assignment container.*/
+.Student-Assignments-mincontainer {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+
+/*Center the main content section.*/
+.Student-Assignments-mincontainer-section {
+    width: 100%;
+    height: auto;
+    padding-top: 150px;
+    display: flex;
+    justify-content: center;
+}
+
+/*Student assignment layout.*/
+.Student-Assignments-student-section {
+    width: 80%;
+    height: auto;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 10px;
+    color: gray;
+    font-size: 15px;
+    text-align: center;
+
+
+}
+
+/*Assignmenet content warpper.*/
+.Student-Assignments-student-content {
+    width: 100%;
+    height: auto;
+    margin-top: 30px;
+
+}
+
+/*Empty state when no assignments are available.*/
+.Student-Assignments-no-assignments {
+    width: 100%;
+    height: 450px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+}
+
+/*Assignmnet list layout.*/
+.Student-Assignments-assignments-section {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    padding: 20px;
+
+
+}
+
+/*Individual assignment card.*/
+.Student-Assignments-assignments-content {
+    width: 100%;
+    height: auto;
+    border: 2px solid gray;
+    margin-top: 30px;
+    overflow: hidden;
+    box-shadow: 0 0 15px rgb(217, 216, 216);
+
+}
+
+/*Assignmnet title layout.*/
+.Student-Assignments-assignments-titles-heading-section {
+    width: 100%;
+    height: auto;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*Assignment tite style.*/
+.Student-Assignments-assignments-titles-heading {
+    width: auto;
+    height: auto;
+    color: green;
+}
+
+/*Assignmnent title text.*/
+.Student-Assignments-assignments-titles {
+    width: auto;
+    height: auto;
+    color: gray;
+}
+
+/*Assignment detail headings.*/
+.Student-Assignments-assignments-heading {
+    width: 100%;
+    height: auto;
+    color: green;
+    font-size: 15px;
+    text-align: start;
+    padding: 15px;
+}
+
+/*Assignment details text.*/
+.Student-Assignments-assignments-text {
+    width: 100%;
+    height: auto;
+    text-align: start;
+    padding-left: 130px;
+    padding-bottom: 20px;
+    overflow: break-word;
+    word-break: break-word;
+    color: gray;
+}
+
+/*Submitted assignmet file section.*/
+.Student-Assignments-assignments-file-section {
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 20px;
+}
+
+/*Submitted assignment file link.*/
+.Student-Assignments-assignments-file-link {
+    font-size: 25px;
+    text-decoration: none;
+}
+
+/*Media queries for responsive design*/
+@media (max-width: 610px) {
+
+    .Student-Assignments-student-section {
+        width: 100%;
+        height: auto;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        padding-left: 10px;
+        color: gray;
+        font-size: 12px;
+        text-align: center;
+
+
+    }
+
+    .Student-Assignments-assignments-heading {
+        width: 100%;
+        height: auto;
+        color: green;
+        font-size: 12px;
+        text-align: start;
+        padding: 15px;
+    }
+
+
+}
+
+@media (max-width: 480px) {
+    .Student-Assignments-assignments-text {
+        width: 100%;
+        height: auto;
+        text-align: start;
+        padding-left: 30px;
+
+    }
+
+
+}

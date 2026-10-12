@@ -1,0 +1,174 @@
+/*Reset sefault browser spacing.*/
+* {
+    padding: 0%;
+    margin: 0%;
+}
+
+/*Main course card container.*/
+.allcourses-card-maincontainer {
+    width: 290px;
+    height: auto;
+    overflow: hidden;
+    margin: auto;
+    padding-right: 10px;
+    margin-top: 20px;
+    box-shadow: 7px 7px 20px rgb(199, 198, 198);
+    padding-bottom: 30px;
+    border: 2px solid gray;
+}
+
+/*Course image container.*/
+.allcourses-card-imag-section {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+/*Course image styling.*/
+.allcourses-card-imag {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+/*Course logo and text section.*/
+.add-courses-card-logo-section {
+    width: 100%;
+    height: auto;
+    margin-top: 10px;
+    font-size: 15px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding-left: 15px;
+    color: rgb(70, 69, 69);
+}
+
+/*Course logo text color*/
+.allcourses-logo-text {
+    width: auto;
+    height: auto;
+    color: green;
+}
+
+/*Course title styling.*/
+.allcourses-card-text-heading-section {
+    width: 100%;
+    height: 25px;
+    max-height: 200px;
+    margin-top: 20px;
+    padding-left: 25px;
+    font-size: 15px;
+    text-align: start;
+    color: green;
+    overflow: hidden;
+}
+
+/*Course title height adjustment.*/
+.allcourses-card-text-heading-section {
+    width: 100%;
+    height: auto;
+}
+
+/*Short course description.*/
+.allcourses-card-text-less-content-section {
+    width: 100%;
+    height: 50px;
+    font-size: 20px;
+    text-align: start;
+    color: gray;
+    overflow: break-word;
+    word-break: break-word;
+    overflow: hidden;
+}
+
+/*Full course description.*/
+.allcourses-card-text-more-content-section {
+    width: 100%;
+    height: auto;
+    font-size: 20px;
+    text-align: start;
+    color: gray;
+    overflow: break-word;
+    word-break: break-word;
+
+}
+
+/*Show more button styling.*/
+.allcourses-card-show-more-text-button {
+
+    outline: none;
+    border: none;
+    background-color: white;
+    font-size: 15px;
+    color: gray;
+    margin-left: 82%;
+
+
+}
+
+/*Show more button hover effect.*/
+.allcourses-card-show-more-text-button:hover {
+    background-color: white;
+    color: green;
+    cursor: pointer;
+}
+
+/*Course details text section.*/
+.allcourses-card-text-section {
+    width: 100%;
+    height: 25px;
+    margin-top: 10px;
+    padding-left: 25px;
+    font-size: 17px;
+    text-align: start;
+    color: gray;
+    overflow: hidden;
+
+}
+
+/*Course button container.*/
+.allcourses-card-button-section {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+/*Course link styling.*/
+.add-courses-card-link {
+    width: 100%;
+    height: auto;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+}
+
+/*Main course button styling.*/
+.allcourses-card-button {
+    width: 80%;
+    height: 35px;
+    font-size: 20px;
+    color: white;
+    background-color: rgb(2, 130, 2);
+    border: 2px solid gray;
+    cursor: pointer;
+    outline: none;
+}
+
+/*course button hover effect.*/
+.allcourses-card-button:hover {
+    color: rgb(243, 240, 240);
+    background-color: rgb(2, 111, 2);
+
+}
+
+/*Course button click effect.*/
+.allcourses-card-button:active {
+    color: rgb(224, 221, 221);
+    background-color: rgb(1, 104, 1);
+}

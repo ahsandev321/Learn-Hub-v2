@@ -1,0 +1,324 @@
+/*Reset default browser spacing.*/
+* {
+    margin: 0%;
+    padding: 0%;
+}
+
+/*Main navbar container.*/
+.nav-main-container {
+    width: 100%;
+    height: 100px;
+    position: fixed;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 150;
+    background-color: white;
+    box-shadow: 0 0 10px rgb(203, 203, 203);
+}
+
+/*Remove default link styling.*/
+.nav-link {
+    text-decoration: none;
+    outline: none;
+}
+
+/*Website logo styling*/
+.nav-logo-section {
+    font-size: 17px;
+    color: rgb(70, 69, 69);
+
+}
+
+/*Highlight the logo text.*/
+.nav-logo-text {
+    width: auto;
+    height: auto;
+    color: green;
+
+
+}
+
+/*Main navigation links layout.*/
+.nav-link-section {
+    width: auto;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    font-size: 10px;
+}
+
+/*Style the active navigation link*/
+.nav-active-links {
+    width: auto;
+    height: 37px;
+    margin-left: 10px;
+    color: green;
+    border-bottom: 3px solid green;
+}
+
+/*Default navigation link styling.*/
+.nav-links {
+    width: auto;
+    height: 30px;
+    margin-left: 10px;
+    color: rgb(100, 100, 100);
+    transition: 0.3s;
+}
+
+/*Change link color on hover.*/
+.nav-links:hover {
+    color: green;
+    border-bottom: 3px solid green;
+}
+
+/*Login and logout buttons container.*/
+.nav-button-section {
+    width: auto;
+    height: auto;
+    display: flex;
+}
+
+/*Login and signup button styling.*/
+.nav-buttons {
+    width: 100px;
+    height: 45px;
+    outline: none;
+    font-size: 17px;
+    margin-left: 10px;
+    color: white;
+    background-color: rgb(2, 130, 2);
+    box-shadow: 2px 2px 15px rgb(160, 160, 160);
+    border: 2px solid rgb(1, 79, 1);
+    border-radius: 15px;
+
+}
+
+/*Change button apppearance on hover.*/
+.nav-buttons:hover {
+    color: rgb(228, 227, 227);
+    background-color: rgb(2, 126, 2);
+
+}
+
+/*Change button apppearance when clicked.*/
+.nav-buttons:active {
+    color: rgb(198, 197, 197);
+    background-color: rgb(2, 105, 2);
+}
+
+/*Logout button styling.*/
+.nav-logout-button {
+    width: 100px;
+    height: 45px;
+    outline: none;
+    font-size: 17px;
+    margin-left: 10px;
+    color: white;
+    background-color: gray;
+    box-shadow: 2px 2px 15px rgb(160, 160, 160);
+    border: 2px solid rgb(83, 82, 82);
+    border-radius: 15px;
+
+}
+
+/*Change logout button apppearance on hover.*/
+.nav-logout-button:hover {
+    color: rgb(228, 227, 227);
+    background-color: rgb(118, 117, 117);
+
+}
+
+/*Change logout button apppearance when clicked.*/
+.nav-logout-button:active {
+    color: rgb(203, 202, 202);
+    background-color: rgb(88, 88, 88);
+
+}
+
+/*Hide the mobile menue icon on large screens.*/
+.nav-menue-icon {
+    width: 60px;
+    height: 38px;
+    display: none;
+
+}
+
+/*Hide the mobile menue links on large screens.*/
+.nav-menue-link-section {
+    width: 100%;
+    height: 200px;
+    display: none;
+}
+
+/*Mobile navigation link styling.*/
+.nav-menue-link {
+    margin-left: 20px;
+    line-height: 55px;
+    color: gray;
+    font-size: 12px;
+}
+
+/*Change mobile link apppearance when clicked. */
+.nav-menue-link:active {
+    color: rgb(81, 81, 81);
+    font-size: 12px;
+}
+
+/*Arrange mobile menue buttons.*/
+.nav-menue-button-section {
+    width: 100%;
+    height: auto;
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-around;
+}
+
+/*Mobile menue button link styling.*/
+.nav-menue-button-link {
+    width: 50%;
+    height: auto;
+    display: flex;
+    text-decoration: none;
+    justify-content: center;
+
+}
+
+/*Mobile login and signup button styling*/
+.nav-menue-buttons {
+    width: 90%;
+    height: 38px;
+    outline: none;
+    font-size: 17px;
+    color: white;
+    background-color: rgb(2, 130, 2);
+    box-shadow: 2px 2px 15px rgb(160, 160, 160);
+    border: 2px solid rgb(1, 79, 1);
+    border-radius: 10px;
+
+}
+
+/*Mobile logout button styling.*/
+.nav-menue-logout-button {
+    width: 70%;
+    height: 38px;
+    outline: none;
+    font-size: 17px;
+    color: white;
+    background-color: gray;
+    box-shadow: 2px 2px 15px rgb(160, 160, 160);
+    border: 2px solid rgb(1, 79, 1);
+    border-radius: 10px;
+}
+
+/*Change mobile login and signup buttons when clicked.*/
+.nav-menue-buttons:active {
+    color: rgb(198, 197, 197);
+    background-color: rgb(2, 105, 2);
+}
+
+/*Mobile logout button styling.*/
+.nav-menue-logout-button {
+    width: 70%;
+    height: 38px;
+    outline: none;
+    font-size: 17px;
+    color: white;
+    background-color: gray;
+    box-shadow: 2px 2px 15px rgb(160, 160, 160);
+    border: 2px solid rgb(83, 82, 82);
+    border-radius: 10px;
+}
+
+/*Change mobile logout button when clicked.*/
+.nav-menue-logout-button:active {
+    color: rgb(203, 202, 202);
+    background-color: rgb(88, 88, 88);
+}
+
+/*Media queries for responsive design*/
+@media (max-width:1024px) {
+
+    .nav-logo-section {
+        font-size: 15px;
+        color: rgb(70, 69, 69);
+
+    }
+
+    .nav-buttons {
+        width: 100px;
+        height: 42px;
+        font-size: 15px;
+        margin-left: 10px;
+
+    }
+
+
+
+}
+
+@media (max-width:768px) {
+
+    .nav-menue-icon {
+        width: 60px;
+        height: 38px;
+        outline: none;
+        border: 2px solid gray;
+        font-size: 20px;
+        color: white;
+        border-radius: 10px;
+        display: block;
+        cursor: pointer;
+        transition: 0.3s;
+        background-color: rgb(81, 81, 81);
+    }
+
+    .nav-menue-icon:active {
+        color: rgb(213, 212, 212);
+        background-color: rgb(58, 58, 58);
+    }
+
+    .nav-menue-link-section {
+        position: absolute;
+        left: 0;
+        top: 90px;
+        display: block;
+        width: 100%;
+        height: auto;
+        border-radius: 20px;
+        background-color: white;
+        overflow: hidden;
+        z-index: 200;
+        padding-bottom: 25px;
+        padding-top: 25px;
+        box-shadow: 0 0 10px rgb(176, 175, 175);
+    }
+
+    .nav-button-section {
+        width: auto;
+        height: auto;
+        flex-direction: column;
+    }
+
+    .nav-link-section {
+        width: auto;
+        height: 70px;
+        display: none;
+    }
+
+    .nav-buttons {
+        width: 100px;
+        height: 42px;
+        display: none;
+
+    }
+
+    .nav-logout-button {
+        width: 100px;
+        height: 45px;
+        display: none;
+
+    }
+
+
+}

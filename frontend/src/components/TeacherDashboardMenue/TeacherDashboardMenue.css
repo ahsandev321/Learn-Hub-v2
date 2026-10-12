@@ -1,0 +1,134 @@
+/*Reset default browse spacing.*/
+* {
+    padding: 0%;
+    margin: 0%;
+}
+
+/*Collapsed teacher sidebar.*/
+.teacher-links-section-close {
+    position: absolute;
+    width: 100px;
+    height: 100vh;
+    padding-top: 120px;
+    border: 2px solid gray;
+    overflow: hidden;
+    background-color: white;
+    z-index: 55;
+    transition: 0.3s;
+}
+
+/*Expandee teacher sidebar.*/
+.teacher-links-section-open {
+    position: absolute;
+    width: 285px;
+    height: 100vh;
+    padding-top: 120px;
+    border: 2px solid gray;
+    overflow: hidden;
+    background-color: white;
+    z-index: 55;
+    transition: 0.3s;
+
+}
+
+/*Sidebar toggle button styling.*/
+.teacher-links-icon {
+    width: 60px;
+    height: 38px;
+    margin-left: 17px;
+    outline: none;
+    border: 2px solid gray;
+    font-size: 20px;
+    color: white;
+    border-radius: 10px;
+    display: block;
+    cursor: pointer;
+    transition: 0.3s;
+    background-color: rgb(81, 81, 81);
+}
+
+/*change button appearance when clicked.*/
+.teacher-links-icon:active {
+    color: rgb(213, 212, 212);
+    background-color: rgb(58, 58, 58);
+}
+
+/*Teacher navigation links container.*/
+.teacher-menue-links {
+    width: auto;
+    height: auto;
+    margin-left: 120px;
+}
+
+/*Remove default navigation link styling.*/
+.teacher-navigation-link {
+    text-decoration: none;
+    outline: none;
+}
+
+/*Default dashboard link styling.*/
+.teacher-dashboard-link {
+    width: 155px;
+    height: auto;
+    text-align: center;
+    color: gray;
+    font-size: 12px;
+    margin-top: 25px;
+    margin-right: 10px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+/*Change dashboard link appearance on hover.*/
+.teacher-dashboard-link:hover {
+    color: gray;
+    font-size: 12px;
+    margin-top: 25px;
+    background-color: rgb(226, 225, 225);
+}
+
+/*Highlights the active dashboard link.*/
+.teacher-dashboard-active-link {
+    width: 155px;
+    height: auto;
+    color: gray;
+    font-size: 12px;
+    text-align: center;
+    margin-top: 25px;
+    background-color: rgb(226, 225, 225);
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    margin-right: 10px;
+    border-left: 7px solid green;
+
+}
+
+/*Media queries for responsive design*/
+@media (max-width:480px) {
+    .teacher-links-section-close {
+        position: absolute;
+        width: 70px;
+        height: 100vh;
+        padding-top: 120px;
+        border: 2px solid gray;
+        overflow: hidden;
+        background-color: white;
+        transition: 0.3s;
+    }
+
+    .teacher-links-icon {
+        width: 40px;
+        height: 32px;
+        margin-left: 12px;
+        outline: none;
+        border: 2px solid gray;
+        font-size: 15px;
+        color: white;
+        border-radius: 10px;
+        display: block;
+        cursor: pointer;
+        transition: 0.3s;
+        background-color: rgb(81, 81, 81);
+    }
+
+}

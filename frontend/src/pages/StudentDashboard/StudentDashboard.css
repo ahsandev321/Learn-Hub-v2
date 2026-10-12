@@ -1,0 +1,117 @@
+/*Reset default browser spacing.*/
+* {
+    padding: 0%;
+    margin: 0%;
+}
+
+/*Main dashboard layout*/
+.studentDashboard-maincontainer {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+
+.studentDashboard-content-maincontainer {
+    width: 100%;
+    height: auto;
+    padding-top: 150px;
+    color: gray;
+}
+
+/*Show message when no course are available.*/
+.studentDashboard-no-content-section {
+    width: 100%;
+    height: 450px;
+    color: gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+}
+
+/*Dashboard heading.*/
+.studentDashboard-heading-section {
+    width: 100%;
+    height: auto;
+    font-size: 18px;
+    padding-left: 10%;
+
+}
+
+/*Create the course cards.*/
+.studentDashboard-maincontainer-section {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 70px;
+}
+
+/*Display courses in a grid.*/
+.studentDashboard-content-section {
+    width: 78%;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 290px);
+    gap: 20px;
+    align-items: start;
+
+}
+
+/*Media queries for responsive design*/
+@media (max-width:1200px) {
+    .studentDashboard-heading-section {
+        width: 100%;
+        height: auto;
+        padding-left: 8%;
+
+    }
+
+    .studentDashboard-content-section {
+        width: 90%;
+        height: auto;
+        display: grid;
+        grid-template-columns: repeat(2, 355px);
+        gap: 15px;
+        align-items: start;
+
+    }
+
+
+}
+
+@media (max-width:1024px) {
+    .studentDashboard-content-section {
+        width: 100%;
+        height: auto;
+        display: grid;
+        grid-template-columns: repeat(2, 355px);
+        gap: 15px;
+        padding-left: 20px;
+        align-items: start;
+
+    }
+
+}
+
+
+@media (max-width:768px) {
+    .studentDashboard-heading-section {
+        width: 100%;
+        height: auto;
+        font-size: 15px;
+        padding-left: 15%;
+
+    }
+
+    .studentDashboard-content-section {
+        width: 100%;
+        height: auto;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        align-items: center;
+
+    }
+
+
+}

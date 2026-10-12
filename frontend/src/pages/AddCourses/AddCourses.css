@@ -1,0 +1,629 @@
+/*Reset default browse spacing*/
+* {
+    padding: 0%;
+    margin: 0%;
+}
+
+/*Main layout and page content.*/
+.add-courses-section-maincontainer {
+    width: 100%;
+    height: 100vh;
+    overflow: scroll;
+
+}
+
+.add-courses-content-section {
+    width: 100%;
+    height: auto;
+    color: gray;
+    text-align: center;
+    margin-top: 120px;
+    padding-left: 100px;
+    font-size: 15px;
+}
+
+.add-courses-content {
+    width: 100%;
+    height: auto;
+    color: gray;
+    text-align: center;
+    margin-top: 120px;
+    font-size: 15px;
+
+}
+
+.add-courses-fields-maincontainer {
+    width: 100%;
+    height: auto;
+}
+
+/*Course image upload field and validation states.*/
+.add-courses-file-input-section {
+    width: 100%;
+    height: auto;
+    color: green;
+    text-align: start;
+    margin-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 50px;
+}
+
+.add-courses-file-invalid-input-field-section,
+.add-courses-file-input-field-section {
+    width: 70%;
+    height: 55px;
+    color: gray;
+    margin-top: 20px;
+    border: 2px solid gray;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+/*Highlight the file field when focused.*/
+.add-courses-file-input-field-section:focus-within {
+    border-radius: 10px;
+    color: green;
+    border: 2px solid green;
+    box-shadow: 0 0 10px rgb(85, 148, 85);
+}
+
+/*Show an error style for an invalid image field.*/
+.add-courses-file-invalid-input-field-section {
+    border-radius: 10px;
+    color: red;
+    border: 2px solid red;
+    box-shadow: 0 0 10px rgb(184, 121, 121);
+}
+
+.add-courses-file-input-field {
+    width: 100%;
+    height: 55px;
+    padding: 10px;
+
+}
+
+/*Style the file selection button.*/
+.add-courses-file-input-field::file-selector-button {
+    width: 100px;
+    height: 30px;
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 7px;
+    color: white;
+    background-color: gray;
+    border: 2px solid rgb(104, 104, 104);
+
+
+}
+
+.add-courses-file-input-field::file-selector-button:hover {
+    color: rgb(243, 241, 241);
+    background-color: rgb(120, 120, 120);
+    border: 2px solid rgb(104, 104, 104);
+
+
+
+}
+
+.add-courses-file-input-field::file-selector-button:active {
+    color: rgb(225, 224, 224);
+    background-color: rgb(99, 99, 99);
+    border: 2px solid rgb(104, 104, 104);
+
+
+
+}
+
+/*Course form layout.*/
+.add-courses-upload-button-section {
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.add-courses-input-fields-section {
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.add-courses-input-section {
+    width: 90%;
+    height: auto;
+    color: green;
+    text-align: start;
+    margin-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 50px;
+
+
+}
+
+/*Style form inputs and validation states.*/
+.add-courses-invalid-input-field,
+.add-courses-input-field {
+    width: 100%;
+    height: 55px;
+    border: 2px solid gray;
+    border-radius: 10px;
+    font-size: 22px;
+    padding-left: 10px;
+    margin-top: 10px;
+    transition: 0.3s;
+    outline: none;
+}
+
+/*Highlights the active input field.*/
+.add-courses-input-field:focus {
+    border: 2px solid green;
+    box-shadow: 0 0 10px rgb(85, 148, 85);
+
+
+}
+
+/*Show invalid input fields.*/
+.add-courses-invalid-input-field {
+    border: 2px solid red;
+    box-shadow: 0 0 10px rgb(184, 121, 121);
+
+}
+
+/*Upload button styles and insteraction states.*/
+.add-courses-upload-button {
+    width: 150px;
+    height: 45px;
+    outline: none;
+    font-size: 17px;
+    margin-left: 10px;
+    color: white;
+    background-color: rgb(2, 130, 2);
+    box-shadow: 2px 2px 15px rgb(160, 160, 160);
+    border: 2px solid rgb(1, 79, 1);
+    border-radius: 15px;
+}
+
+.add-courses-upload-button:hover {
+    color: rgb(228, 227, 227);
+    background-color: rgb(2, 126, 2);
+}
+
+.add-courses-upload-button:active {
+    color: rgb(198, 197, 197);
+    background-color: rgb(2, 105, 2);
+}
+
+/*Course cards section.*/
+.add-courses-card-section-maincontainer {
+    width: 100%;
+    height: auto;
+    padding-top: 30px;
+    padding-left: 40px;
+
+}
+
+/*Center the message when no course are available.*/
+.add-courses-nocard-section {
+    width: 100%;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+/*Display course cards in a responsive grid.*/
+.add-courses-card-section {
+    width: 100%;
+    height: auto;
+    padding-bottom: 70px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: start;
+
+
+}
+
+/*Course card container and thumbnail.*/
+.add-courses-card-maincontainer {
+    width: 90%;
+    height: auto;
+    overflow: hidden;
+    padding-right: 10px;
+    margin-top: 20px;
+    box-shadow: 7px 7px 20px rgb(199, 198, 198);
+    padding-bottom: 30px;
+    border: 2px solid gray;
+}
+
+.add-courses-card-imag-section {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.add-courses-card-imag {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+/*Course card branding and options menue.*/
+.add-courses-card-logo-section {
+    position: relative;
+    width: 100%;
+    height: auto;
+    margin-top: 10px;
+    font-size: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 15px;
+    color: rgb(70, 69, 69);
+}
+
+.add-courses-logo-text {
+    width: auto;
+    height: auto;
+    color: green;
+}
+
+.add-courses-card-more-option-button {
+    width: 30px;
+    height: 30px;
+    background-color: rgb(224, 224, 224);
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: gray;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: 10px;
+}
+
+.add-courses-card-more-option-button:hover {
+
+    background-color: rgb(201, 199, 199);
+    color: gray;
+    border-radius: 100%;
+}
+
+.add-courses-card-more-option-button:active {
+
+    background-color: rgb(181, 179, 179);
+    color: gray;
+    border-radius: 100%;
+}
+
+/*Position the edit and delete option menue.*/
+.add-courses-card-more-option-section {
+    position: absolute;
+    top: 37px;
+    right: 20px;
+    width: 100px;
+    height: 80px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 2px 2px 15px rgb(160, 160, 160);
+    z-index: 50;
+    background-color: rgb(240, 240, 240);
+    transition: 0.3s;
+}
+
+.add-courses-card-option-button-section {
+    width: 100%;
+    height: auto;
+
+}
+
+/*Style the course options buttons.*/
+.add-courses-card-option-button {
+    width: 100%;
+    height: 40px;
+    font-size: 17px;
+    color: white;
+    background-color: rgb(150, 149, 149);
+    border: none;
+}
+
+.add-courses-card-option-button:hover {
+    width: 100%;
+    height: 40px;
+    font-size: 17px;
+    color: rgb(243, 241, 241);
+    background-color: rgb(132, 131, 131);
+    border: none;
+}
+
+.add-courses-card-option-button:active {
+    width: 100%;
+    height: 40px;
+    font-size: 17px;
+    color: rgb(223, 222, 222);
+    background-color: rgb(111, 111, 111);
+    border: none;
+}
+
+/*Course title and description.*/
+.add-courses-card-text-heading-section {
+    width: 100%;
+    height: 25px;
+    max-height: 200px;
+    margin-top: 20px;
+    padding-left: 25px;
+    font-size: 15px;
+    text-align: start;
+    color: green;
+    overflow: hidden;
+}
+
+.add-courses-card-detail-section {
+    width: 100%;
+    height: auto;
+}
+
+/*Show a shortened or expanded course description.*/
+.add-courses-card-text-less-content-section {
+    width: 100%;
+    height: 50px;
+    margin-top: 15px;
+    padding-left: 25px;
+    font-size: 20px;
+    text-align: start;
+    color: gray;
+    overflow: break-word;
+    word-break: break-word;
+    overflow: hidden;
+}
+
+.add-courses-card-text-more-content-section {
+    width: 100%;
+    height: auto;
+    margin-top: 15px;
+    padding-left: 25px;
+    font-size: 20px;
+    text-align: start;
+    color: gray;
+    overflow: break-word;
+    word-break: break-word;
+
+}
+
+/*Show more or less description text.*/
+.add-courses-card-show-more-text-button {
+
+    outline: none;
+    border: none;
+    background-color: white;
+    font-size: 15px;
+    color: gray;
+    margin-left: 82%;
+
+
+}
+
+.add-courses-card-show-more-text-button:hover {
+    background-color: white;
+    color: green;
+    cursor: pointer;
+}
+
+/*Display course category and price.*/
+.add-courses-card-text-section {
+    width: 100%;
+    height: 25px;
+    margin-top: 20px;
+    padding-left: 25px;
+    font-size: 17px;
+    text-align: start;
+    color: gray;
+    overflow: hidden;
+
+}
+
+/*Course card navigation button.*/
+.add-courses-card-button-section {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.add-courses-card-link {
+    width: 100%;
+    height: auto;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+}
+
+.add-courses-card-button {
+    width: 80%;
+    height: 35px;
+    font-size: 20px;
+    color: white;
+    background-color: rgb(2, 130, 2);
+    border: 2px solid gray;
+    cursor: pointer;
+    outline: none;
+}
+
+.add-courses-card-button:hover {
+    color: rgb(243, 240, 240);
+    background-color: rgb(2, 111, 2);
+
+}
+
+.add-courses-card-button:active {
+    color: rgb(224, 221, 221);
+    background-color: rgb(1, 104, 1);
+}
+
+/*Media queries for responsive design*/
+@media (max-width:1300px) {
+    .add-courses-card-section {
+        width: 100%;
+        height: auto;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        overflow: hidden;
+
+    }
+}
+
+@media (max-width:1200px) {
+    .add-courses-card-section {
+        width: 100%;
+        height: auto;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        overflow: hidden;
+
+    }
+}
+
+@media (max-width:1024px) {
+    .add-courses-card-section {
+        width: 100%;
+        height: auto;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        overflow: hidden;
+
+    }
+}
+
+
+@media (max-width:768px) {
+
+    .add-courses-file-input-field::file-selector-button {
+        width: 90px;
+        height: 30px;
+        font-size: 12px;
+    }
+
+    .add-courses-input-fields-section {
+        width: 100%;
+        height: auto;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .add-courses-card-section {
+        width: 100%;
+        height: auto;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        overflow: hidden;
+
+    }
+
+}
+
+@media (max-width:610px) {
+    .add-courses-content-section {
+        width: 100%;
+        height: auto;
+        padding-left: 90px;
+        font-size: 12px;
+
+    }
+
+
+    .add-courses-file-input-section {
+        width: 100%;
+        height: auto;
+        padding-left: 30px;
+    }
+
+    .add-courses-file-input-field::file-selector-button {
+        width: 90px;
+        height: 30px;
+        font-size: 12px;
+
+
+    }
+
+
+    .add-courses-file-input-field-section {
+        width: 90%;
+        height: 55px;
+
+    }
+
+    .add-courses-input-section {
+        width: 90%;
+        height: auto;
+        padding-left: 30px;
+
+
+    }
+
+    .add-courses-invalid-input-field,
+    .add-courses-input-field {
+        width: 100%;
+        height: 55px;
+        font-size: 17px;
+    }
+
+
+}
+
+@media (max-width:480px) {
+
+    .add-courses-content {
+        width: 100%;
+        height: auto;
+        color: gray;
+        text-align: center;
+        margin-top: 120px;
+        padding-left: 2px;
+        font-size: 12px;
+
+    }
+
+    .add-courses-content-section {
+        width: 100%;
+        height: auto;
+        padding-left: 90px;
+        font-size: 10px;
+
+    }
+
+    .add-courses-file-input-section {
+        width: 100%;
+        height: auto;
+        padding-left: 25px;
+    }
+
+
+    .add-courses-file-input-field::file-selector-button {
+        width: 70px;
+        height: 30px;
+        font-size: 10px;
+
+
+    }
+
+    .add-courses-card-section-maincontainer {
+        width: 100%;
+        height: auto;
+        padding-top: 100px;
+        padding-left: 2px;
+
+    }
+
+
+}

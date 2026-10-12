@@ -1,0 +1,308 @@
+
+/*Remove default margin and padding.*/
+*{
+    margin: 0%;
+    padding: 0%;
+    
+}
+
+/*Main signup page container. */
+.signup-main-container{
+      width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    padding-top: 150px;
+    padding-bottom: 100px;
+    
+}
+
+/*Signup form page box.*/
+.signup-main-section{
+     width: 700px;
+    height: auto;
+    padding-top: 2%;
+    font-size: 15px;
+    text-align: center;
+    border: 2px solid gray;
+    padding-bottom: 50px;
+    border-radius: 20px;
+    background-color: rgb(238, 234, 234)
+}
+
+/*Space around each input field.*/
+.signup-input-field-section{
+    width: 100%;
+    height: auto;
+    margin-top: 2%;
+   
+
+}
+
+/*Input field container.*/
+.signup-field-section{
+    width: 100%;
+    height: 65px ;
+   
+}
+
+/*Container for input and button.*/
+.signup-field-button-section{
+    width: 100%;
+    height: auto;
+}
+
+/*Normal and invalid input style*/
+.signup-invalid-input,
+.signup-input{
+    position: relative;
+    width: 70%;
+    height: 60px;
+    outline: none;
+    border: 2px solid rgb(163, 163, 163);
+    border-radius: 10px;
+    padding-top: 5px;
+    padding-left: 10px;
+    font-size: 18px;
+    transition: 0.3s;
+    
+}
+
+/*Change input border when user click on it.*/
+.signup-input:focus{
+     padding-top: 5px;
+      border: 2px solid rgb(2, 128, 2);
+      box-shadow: 0 0 5px rgb(0, 182, 0);
+      padding-left: 10px;
+      font-size: 18px;
+}
+
+/*Style for invalid input.*/
+.signup-invalid-input{
+     padding-top: 5px;
+      border: 2px solid red;
+      box-shadow: 0 0 5px rgb(229, 129, 129);
+      padding-left: 10px;
+      font-size: 18px;
+
+}
+
+/*Placeholder text style.t*/
+.signup-error-placeholer,
+.signup-placeholer{
+    position: relative;
+    width: 70%;
+    height: auto;
+    text-align: start;
+    color: gray;
+    font-size: 12px;
+    margin-left: 17%;
+    margin-top: -42px;
+    pointer-events: none;
+    transition: 0.3s;
+}
+
+/*Move placeholder up when input is focused.*/
+.signup-input:focus + .signup-placeholer{
+     margin-top: -55px;
+     font-size: 10px;
+     color: green;
+}
+
+/*Move error placeholder up when invalid input is focused.*/
+.signup-invalid-input:focus + .signup-error-placeholer{
+     margin-top: -55px;
+     font-size: 10px;
+     color: red;
+}
+
+/*Keep placeholder at the top when input has data.*/
+.signup-input:not(:placeholder-shown) + .signup-placeholer{
+    margin-top: -55px;
+    font-size: 10px;
+    
+}
+
+/*Keep error placeholder at the top when invalid input has data.*/
+.signup-invalid-input:not(:placeholder-shown) + .signup-error-placeholer{
+    margin-top: -55px;
+    font-size: 10px;
+    
+}
+
+/* Hide show/ hide password button when password is empty.*/
+.signup-password-button-hide{
+    display: none;
+}
+
+/*Show/Hide password button style*/
+.signup-password-button{
+    position: relative;
+    top: -5%;
+    left: 30%;
+    width: 50px;
+    height: 25px;
+    color: white;
+    background-color: gray;
+    border-radius: 5px;
+    border: 2px solid gray;
+    outline: none;
+}
+
+/*Change button style when clicked.*/
+.signup-password-button:active{
+     color: rgb(209, 207, 207);
+    background-color: rgb(84, 83, 83);
+}
+
+/*Password validation message.*/
+.signup-password-message{
+    color: red;
+}
+
+/*Signup button.*/
+.signup-button{
+    width: 70%;
+    height: 50px;
+    border-radius: 20px;
+    color: white;
+  border: 2px solid rgb(1, 79, 1);
+   background-color: rgb(2, 130, 2);
+    font-size: 20px;
+    margin-top: 30px;
+    outline: none;
+}
+
+/*Change signup button when mouse is over it*/
+.signup-button:hover{
+  color: rgb(230, 229, 229);
+     border: 2px solid rgb(1, 79, 1);
+   background-color: rgb(2, 126, 2);
+    font-size: 20px;
+
+}
+/*Change signup button when clicked. */
+.signup-button:active{
+ color: rgb(174, 172, 172);
+    border: 2px solid rgb(1, 79, 1);
+   background-color: rgb(2, 105, 2);
+    font-size: 20px;
+
+}
+
+/*Already have an account button.*/
+.signUp-account-button{
+    width: 70%;
+    height: 50px;
+    border-radius: 20px;
+    color: green;
+    border: 2px solid rgb(2, 104, 2);
+    background-color: white;
+    font-size: 17px;
+    margin-top: 12px;
+    outline: none;
+}
+
+/*Change account button when mouse is over it*/
+.signUp-account-button:hover{
+  color: rgb(2, 117, 2);
+    border: 2px solid rgb(1, 103, 1);
+    background-color: rgb(223, 222, 222);
+    font-size: 17px;
+
+}
+
+/*Change account button when clicked. */
+.signUp-account-button:active{
+    color: rgb(1, 94, 1);
+     border: 2px solid rgb(1, 79, 1);
+    background-color: rgb(174, 173, 173);
+     background-color: rgb(174, 173, 173);
+    font-size: 17px;
+
+}
+
+/*Adjust page padding for medium screens.*/
+@media (max-width:1200px) {
+    .signup-main-container{
+      width: 100%;
+      height: auto;
+   
+}
+    
+}
+
+/*Make the form smaller on tablet screen.*/
+@media (max-width:768px) {
+
+     .signup-main-container{
+      width: 100%;
+    height: auto;
+  
+}
+    
+
+
+    .signup-main-section{
+     width:90% ;
+    height: auto;
+    padding-top: 2%;
+    font-size: 15px;
+  
+}
+}
+    
+
+/*Adjust input fields for smaller screens*/
+@media (max-width:670px) {
+
+    
+
+    .signup-main-section{
+     width:90% ;
+    height: auto;
+    padding-top: 2%;
+    font-size: 15px;
+  
+}
+
+/*Make input fields bigger on smaller screens.*/
+.signup-invalid-input,
+.signup-input{
+    width: 90%;
+    height: 60px;
+   
+    
+}
+
+/*Change placeholder position on small screens.*/
+.signup-error-placeholer,
+.signup-placeholer{
+ 
+    width: 70%;
+    height: auto;
+    text-align: start;
+    font-size: 10px;
+    margin-left: 7%;
+}
+
+/*Move password button on small screens.*/
+.signup-password-button{
+    position: relative;
+    top: -5%;
+    left: 38%;
+
+}
+
+    
+}
+
+/*Change password button position on mobile.*/
+@media (max-width:480px) {
+    .signup-password-button{
+    position: relative;
+    top: -5%;
+    left: 34%;
+
+}
+}

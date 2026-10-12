@@ -1,0 +1,132 @@
+/*Reset default browse spacing.*/
+* {
+    padding: 0%;
+    margin: 0%;
+}
+
+/*Main footer container.*/
+.footer-maincontainer {
+    width: 100%;
+    height: auto;
+    padding-top: 50px;
+    background-color: rgb(72, 72, 72);
+}
+
+/*Footer content layout.*/
+.footer-content-section {
+    width: 75%;
+    height: auto;
+    margin: auto;
+    padding-left: 0px;
+    display: flex;
+    justify-content: start;
+
+}
+
+/*Footer logo container.*/
+.footer-content-logo-card {
+    width: 300px;
+    height: auto;
+
+}
+
+/*Remove default link styling.*/
+.footer-link {
+    text-decoration: none;
+    outline: none;
+}
+
+/*Footer logo styling.*/
+.footer-logo-section {
+    font-size: 17px;
+    color: gray;
+
+}
+
+/*Higlight the logo text.*/
+.footer-logo-text {
+    width: auto;
+    height: auto;
+    color: green;
+
+
+}
+
+/*Quick links section styling.*/
+.footer-content-quick-links-card {
+    width: 300px;
+    height: auto;
+    color: white;
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+
+
+}
+
+/*Login, signup, and logout links layout.*/
+.footer-register-links-section {
+    width: 100%;
+    height: auto;
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+/*Footer navigation link styling.*/
+.footer-quick-links {
+    width: auto;
+    height: auto;
+    color: gray;
+    font-size: 10px;
+    line-height: 50px;
+}
+
+/*Change link color on hover.*/
+.footer-quick-links:hover {
+    width: auto;
+    height: auto;
+    color: green;
+}
+
+.footer-content-text-section {
+    width: 100%;
+    height: 50px;
+    font-size: 20px;
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 2px solid gray;
+    color: gray;
+}
+
+
+/*Media queries for responsive design.*/
+@media (max-width:1024px) {
+
+    .footer-logo-section {
+        font-size: 15px;
+        color: white;
+
+    }
+}
+
+@media (max-width:768px) {
+
+    .footer-content-section {
+        width: 90%;
+        height: auto;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .footer-content-logo-card {
+        width: 300px;
+        height: 100px;
+    }
+}

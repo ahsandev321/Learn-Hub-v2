@@ -1,0 +1,626 @@
+/*Reset default browser spacing.*/
+* {
+    padding: 0%;
+    margin: 0%;
+}
+
+/*Main Course layout.*/
+.student-course-maincontainer {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+
+.student-course-data-section {
+    width: 100%;
+    height: auto;
+    color: gray;
+    text-align: center;
+    font-size: 15px;
+    padding-top: 120px;
+
+}
+
+/*Course list and content layout.*/
+.student-course-data {
+    width: 100%;
+    min-height: 600px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+}
+
+/*Sidebar open and close states.*/
+.student-course-list-slider-open {
+    position: absolute;
+    width: 290px;
+    height: auto;
+    text-align: start;
+    transition: 0.3s;
+    border: 2px solid gray;
+    margin-top: 30px;
+    background-color: white;
+    overflow: hidden;
+    z-index: 10;
+
+}
+
+.student-course-list-slider-close {
+    position: absolute;
+    width: 75px;
+    height: auto;
+    text-align: start;
+    border: 2px solid gray;
+    margin-top: 30px;
+    overflow: hidden;
+    background-color: white;
+    transition: 0.3s;
+    z-index: 10;
+
+
+}
+
+/*Sidebar toggle button.*/
+.student-course-list-slider-button {
+    width: 50px;
+    height: 38px;
+    margin-left: 10px;
+    outline: none;
+    border: 2px solid gray;
+    font-size: 20px;
+    color: white;
+    border-radius: 10px;
+    display: block;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 10px;
+    background-color: rgb(81, 81, 81);
+
+}
+
+.student-course-list-slider-button:active {
+    color: rgb(213, 212, 212);
+    background-color: rgb(58, 58, 58);
+}
+
+/*Course titles list*/
+.student-course-list-no-titles-section {
+    width: 235px;
+    height: 600px;
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 75px;
+    overflow: hidden;
+}
+
+.student-course-list-titles-section {
+    width: 235px;
+    height: 500px;
+    margin-top: 50px;
+    display: flex;
+    align-items: start;
+    margin-left: 75px;
+    overflow: scroll;
+
+}
+
+.student-course-list-titles-maincontainer {
+    width: 100%;
+    height: auto;
+}
+
+.student-course-list-titles-content-section {
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+/*Default and selected course buttons.*/
+.student-course-list-button {
+    width: 92%;
+    min-height: 55px;
+    height: auto;
+    text-align: center;
+    color: gray;
+    font-size: 10px;
+    margin-right: 10px;
+    text-align: start;
+    padding-left: 10px;
+    padding-right: 25px;
+    background-color: white;
+    border: 2px solid white;
+    overflow: break-word;
+    word-break: break-word;
+
+}
+
+.student-course-list-button:hover {
+    color: gray;
+    font-size: 10px;
+    background-color: rgb(226, 225, 225);
+
+}
+
+.student-course-list-active-button {
+    width: 92%;
+    min-height: 55px;
+    height: auto;
+    color: gray;
+    font-size: 10px;
+    text-align: start;
+    background-color: rgb(226, 225, 225);
+    margin-right: 10px;
+    border: none;
+    padding-left: 10px;
+    padding-right: 25px;
+    overflow: break-word;
+    word-break: break-word;
+    border-left: 7px solid green;
+
+
+}
+
+/*Icon for new course content.*/
+.student-course-list-new-contetn-icon {
+    color: green;
+    font-size: 10px;
+
+}
+
+/*Main area for selected course content.*/
+.student-course-data-display-maincontainer {
+    width: 100%;
+    height: 600px;
+    margin-top: 30px;
+    border: 2px solid gray;
+    overflow: scroll;
+}
+
+/*Course video and title.*/
+.student-course-data-video-section {
+    width: 90%;
+    height: auto;
+    text-align: center;
+    margin-left: auto;
+
+}
+
+.student-course-data-video {
+    width: 75%;
+    height: 550px;
+
+}
+
+.student-course-data-video-title {
+    width: 100%;
+    height: auto;
+    text-align: center;
+    font-size: 20px;
+    overflow: break-word;
+    word-break: break-word;
+}
+
+/*Assignmet content and resource link.*/
+.student-course-data-assignment-section {
+    width: 80%;
+    height: auto;
+    text-align: start;
+    margin-left: auto;
+    text-align: center;
+    font-size: 20px;
+    padding-top: 70px;
+}
+
+.student-course-data-assignment-title-section {
+    width: 90%;
+    height: auto;
+    font-size: 25px;
+    text-align: start;
+    padding: 30px;
+    margin: auto;
+    overflow: break-word;
+    word-break: break-word;
+
+
+}
+
+.student-course-data-assignment {
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
+}
+
+.student-course-data-assignment-link {
+    width: auto;
+    height: auto;
+    text-decoration: none;
+}
+
+/*Message shown when course content is empty.*/
+.student-course-no-data-section {
+    width: 100%;
+    height: 280px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+
+
+}
+
+/*Assignment submission form.*/
+.student-course-submit-assignment-maincontainer {
+    width: 100%;
+    height: auto;
+    margin-top: 30px;
+    background-color: rgb(247, 247, 247);
+    padding-bottom: 30px;
+    padding-top: 12px;
+    font-size: 12px;
+
+}
+
+.student-course-content-input-field-section {
+    width: 100%;
+    height: auto;
+    margin-top: 30px;
+
+}
+
+/*File upload input and validation states.*/
+.student-course-file-input-section {
+    width: 90%;
+    height: auto;
+    color: green;
+    text-align: start;
+    margin-top: 20px;
+    padding-bottom: 20px;
+    margin: auto;
+}
+
+.student-course-file-input-field-section,
+.student-course-file-invalid-input-field-section {
+    width: 100%;
+    height: 55px;
+    color: gray;
+    margin-top: 20px;
+    border: 2px solid gray;
+    background-color: white;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.student-course-file-input-field-section:focus-within {
+    border-radius: 10px;
+    color: green;
+    border: 2px solid green;
+    box-shadow: 0 0 10px rgb(85, 148, 85);
+}
+
+.student-course-file-invalid-input-field-section {
+    border-radius: 10px;
+    color: red;
+    border: 2px solid red;
+    box-shadow: 0 0 10px rgb(184, 121, 121);
+
+}
+
+.student-course-file-input-field {
+    width: 100%;
+    height: 55px;
+    padding: 10px;
+}
+
+.student-course-file-input-field::file-selector-button {
+    width: 100px;
+    height: 30px;
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 7px;
+    color: white;
+    background-color: gray;
+    border: 2px solid rgb(104, 104, 104);
+
+}
+
+.student-course-file-input-field::file-selector-button:hover {
+    color: rgb(243, 241, 241);
+    background-color: rgb(120, 120, 120);
+    border: 2px solid rgb(104, 104, 104);
+
+
+
+}
+
+.student-course-file-input-field::file-selector-button:active {
+    color: rgb(225, 224, 224);
+    background-color: rgb(99, 99, 99);
+    border: 2px solid rgb(104, 104, 104);
+
+
+
+
+}
+
+/*Assignment text input.*/
+.student-course-input-section {
+    width: 90%;
+    height: auto;
+    color: green;
+    text-align: start;
+    margin-top: 20px;
+    padding-bottom: 20px;
+    margin: auto;
+
+
+}
+
+.student-course-input-field {
+    width: 100%;
+    height: 55px;
+    border: 2px solid gray;
+    border-radius: 10px;
+    font-size: 22px;
+    padding-left: 10px;
+    margin-top: 10px;
+    transition: 0.3s;
+    outline: none;
+
+}
+
+.student-course-input-field:focus {
+    border: 2px solid green;
+    box-shadow: 0 0 10px rgb(85, 148, 85);
+
+}
+
+/*Assignment upload button.*/
+.student-course-upload-button-section {
+    width: 100%;
+    height: 55;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.student-course-upload-button {
+    width: 170px;
+    height: 45px;
+    outline: none;
+    font-size: 15px;
+    margin-left: 10px;
+    color: white;
+    background-color: rgb(2, 130, 2);
+    box-shadow: 2px 2px 15px rgb(160, 160, 160);
+    border: 2px solid rgb(1, 79, 1);
+    border-radius: 15px;
+
+}
+
+.student-course-upload-button:hover {
+    color: rgb(228, 227, 227);
+    background-color: rgb(2, 126, 2);
+
+}
+
+.student-course-upload-button:active {
+    color: rgb(198, 197, 197);
+    background-color: rgb(2, 105, 2);
+
+}
+
+/*Media queries for responsive design*/
+@media (max-width:1024px) {
+    .student-course-data {
+        width: 100%;
+        min-height: 520px;
+    }
+
+    .student-course-list-no-titles-section {
+        width: 235px;
+        height: 420px;
+
+
+    }
+
+    .student-course-list-titles-section {
+        width: 235px;
+        height: 420px;
+    }
+
+    .student-course-data-display-maincontainer {
+        width: 100%;
+        height: 520px;
+    }
+
+    .student-course-data-video-section {
+        width: 90%;
+        height: auto;
+        text-align: center;
+        margin-left: auto;
+
+    }
+
+    .student-course-data-video {
+        width: 92%;
+        height: 490px;
+
+    }
+
+}
+
+
+@media (max-width:768px) {
+
+    .student-course-data-section {
+        width: 100%;
+        height: auto;
+        font-size: 15px;
+        margin-top: 30px;
+
+    }
+
+    .student-course-list-slider-button {
+        width: 40px;
+        height: 30px;
+        font-size: 15px;
+    }
+
+    .student-course-data {
+        width: 100%;
+        min-height: 450px;
+    }
+
+    .student-course-list-no-titles-section {
+        width: 235px;
+        height: 355px;
+
+
+    }
+
+    .student-course-list-titles-section {
+        width: 235px;
+        height: 355px;
+    }
+
+    .student-course-data-display-maincontainer {
+        width: 100%;
+        height: 450px;
+    }
+
+
+    .student-course-data-video {
+        width: 92%;
+        height: 450px;
+
+    }
+
+
+    .student-course-data-video-title {
+        width: 100%;
+        height: auto;
+        text-align: center;
+        font-size: 12px;
+    }
+
+    .student-course-data-assignment-section {
+        width: 90%;
+        height: auto;
+        font-size: 15px;
+    }
+
+    .student-course-data-assignment-title-section {
+        width: 100%;
+        height: auto;
+        font-size: 20px;
+
+    }
+
+}
+
+@media (max-width:610px) {
+    .student-course-content-section {
+        width: 100%;
+        height: auto;
+        text-align: center;
+        font-size: 12px;
+        color: gray;
+    }
+
+    .student-course-data {
+        width: 100%;
+        min-height: 350px;
+    }
+
+    .student-course-list-no-titles-section {
+        width: 235px;
+        height: 257px;
+
+
+    }
+
+    .student-course-list-titles-section {
+        width: 235px;
+        height: 257px;
+    }
+
+    .student-course-data-display-maincontainer {
+        width: 100%;
+        height: 350px;
+    }
+
+    .student-course-data-video-section {
+        width: 80%;
+        height: auto;
+        text-align: center;
+        margin-left: auto;
+
+    }
+
+    .student-course-data-video {
+        width: 92%;
+        height: 350px;
+
+    }
+
+    .student-course-data-video-title {
+        width: 100%;
+        height: auto;
+        text-align: center;
+        font-size: 10px;
+    }
+
+    .student-course-data-assignment-section {
+        width: 90%;
+        height: auto;
+        font-size: 10px;
+        padding-left: 20px;
+    }
+
+    .student-course-submit-assignment-maincontainer {
+        width: 100%;
+        height: auto;
+        font-size: 10px;
+
+    }
+
+    .student-course-file-input-field-section,
+    .student-course-file-invalid-input-field-section {
+        width: 100%;
+        height: 45px;
+        color: gray;
+        margin-top: 20px;
+        border: 2px solid gray;
+        background-color: white;
+        border-radius: 10px;
+        transition: 0.3s;
+    }
+
+    .student-course-file-input-field {
+        width: 100%;
+        height: 45px;
+    }
+
+    .student-course-file-input-field::file-selector-button {
+        width: 100px;
+        height: 23px;
+        font-size: 15px;
+
+    }
+
+    .student-course-input-field {
+        width: 100%;
+        height: 45px;
+        font-size: 15px;
+    }
+
+    .student-course-upload-button {
+        width: 150px;
+        height: 35px;
+        outline: none;
+        font-size: 15px;
+    }
+}
