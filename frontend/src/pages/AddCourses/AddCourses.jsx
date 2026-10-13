@@ -11,7 +11,7 @@ function AddCourses() {
     const [title, setTitle] = useState("")
     const [description, setDescription] = useState("")
     const [category, setCategory] = useState("")
-    const [price, setPrice] = useState("")
+    const [price, setPrice] = useState("0")
 
     //track form valifation errrors.
     const [empty, setEmpty] = useState(false)
@@ -197,7 +197,7 @@ function AddCourses() {
                                 />
                             </div>
 
-                            <div className='add-courses-input-section'>
+                            {/* <div className='add-courses-input-section'>
                                 <h1>Price</h1>
                                 <input type="number"
                                     placeholder='Enter Price'
@@ -205,7 +205,7 @@ function AddCourses() {
                                     value={price}
                                     onChange={(e) => setPrice(e.target.value)}
                                 />
-                            </div>
+                            </div> */}
 
                         </div>
 

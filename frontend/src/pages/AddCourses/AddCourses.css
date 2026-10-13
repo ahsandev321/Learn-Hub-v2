@@ -217,19 +217,22 @@
 
 /*Display course cards in a responsive grid.*/
 .add-courses-card-section {
-    width: 100%;
+    width: 78%;
     height: auto;
     padding-bottom: 70px;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 290px);
+    gap: 20px;
     align-items: start;
+    margin: auto;
+
 
 
 }
 
 /*Course card container and thumbnail.*/
 .add-courses-card-maincontainer {
-    width: 90%;
+    width: 290px;
     height: auto;
     overflow: hidden;
     padding-right: 10px;
@@ -472,13 +475,14 @@
 }
 
 /*Media queries for responsive design*/
-@media (max-width:1300px) {
+@media (max-width:1320px) {
     .add-courses-card-section {
         width: 100%;
         height: auto;
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(3, 352px);
         overflow: hidden;
+        gap: 20px;
 
     }
 }
@@ -488,7 +492,7 @@
         width: 100%;
         height: auto;
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(2, 352px);
         overflow: hidden;
 
     }
@@ -526,10 +530,18 @@
         height: auto;
         display: grid;
         grid-template-columns: repeat(1, 1fr);
-        overflow: hidden;
-
+        padding-top: 20px;
+        align-items: start;
+        justify-content: center;
     }
 
+    .add-courses-card-maincontainer {
+        width: 270px;
+        height: auto;
+        margin: auto;
+
+
+    }
 }
 
 @media (max-width:610px) {
