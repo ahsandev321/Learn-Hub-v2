@@ -1,11 +1,11 @@
 [build]
 
-command = "cd backend && npm install && cd ../frontend && npm install && npm run build"
-publish = "frontend/build"
+command = "npm install && npm run build"
+publish = "build"
 
 [functions]
 
-directory = "backend/netlify/functions"
+directory = "../backend/netlify/functions"
 node_bundler = "esbuild"
 
 [[redirects]]
@@ -13,3 +13,4 @@ node_bundler = "esbuild"
 from = "/api/*"
 to = "/.netlify/functions/api/:splat"
 status = 200
+force = true
