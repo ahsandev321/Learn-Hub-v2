@@ -34,7 +34,7 @@ function UseLogin({ saveData }) {
                 setError(false)
 
                 //Send data to API.
-                const res = await axios.post("http://localhost:3000/login", saveData);
+                const res = await axios.post(`${process.env.REACT_APP_API_URL}/login`, saveData);
 
                 //Check email result.
                 setInvalidEmail(res.data.emailNotMatch)

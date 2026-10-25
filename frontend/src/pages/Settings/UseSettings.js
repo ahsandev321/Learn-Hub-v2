@@ -26,7 +26,7 @@ function UseSettings({ updateName, updateEmail, updatePassword, setUpdateName, s
 
                 const userId = localStorage.getItem("userId")
 
-                const res = await axios.get(`http://localhost:3000/users-data/${userId}`, { headers: { Authorization: `Bearer ${token}` } })
+                const res = await axios.get(`${process.env.REACT_APP_API_URL}/users-data/${userId}`, { headers: { Authorization: `Bearer ${token}` } })
 
                 setUserData(res.data.user)
 
@@ -60,11 +60,11 @@ function UseSettings({ updateName, updateEmail, updatePassword, setUpdateName, s
 
                 const userId = localStorage.getItem("userId")
 
-                await axios.put(`http://localhost:3000/update-name/${userId}`, { updateName }, { headers: { Authorization: `Bearer ${token}` } })
+                await axios.put(`${process.env.REACT_APP_API_URL}/update-name/${userId}`, { updateName }, { headers: { Authorization: `Bearer ${token}` } })
 
                 setUpdateName(null)
 
-                const res = await axios.get(`http://localhost:3000/users-data/${userId}`, { headers: { Authorization: `Bearer ${token}` } })
+                const res = await axios.get(`${process.env.REACT_APP_API_URL}/users-data/${userId}`, { headers: { Authorization: `Bearer ${token}` } })
 
                 setUserData(res.data.user)
 
@@ -98,11 +98,11 @@ function UseSettings({ updateName, updateEmail, updatePassword, setUpdateName, s
 
                 const userId = localStorage.getItem("userId")
 
-                await axios.put(`http://localhost:3000/update-email/${userId}`, { updateEmail }, { headers: { Authorization: `Bearer ${token}` } })
+                await axios.put(`${process.env.REACT_APP_API_URL}/update-email/${userId}`, { updateEmail }, { headers: { Authorization: `Bearer ${token}` } })
 
                 setUpdateEmail(null)
 
-                const res = await axios.get(`http://localhost:3000/users-data/${userId}`, { headers: { Authorization: `Bearer ${token}` } })
+                const res = await axios.get(`${process.env.REACT_APP_API_URL}/users-data/${userId}`, { headers: { Authorization: `Bearer ${token}` } })
 
                 setUserData(res.data.user)
 
@@ -136,14 +136,14 @@ function UseSettings({ updateName, updateEmail, updatePassword, setUpdateName, s
 
                 const userId = localStorage.getItem("userId")
 
-                const passwordres = await axios.put(`http://localhost:3000/update-password/${userId}`, { updatePassword }, { headers: { Authorization: `Bearer ${token}` } })
+                const passwordres = await axios.put(`${process.env.REACT_APP_API_URL}/update-password/${userId}`, { updatePassword }, { headers: { Authorization: `Bearer ${token}` } })
 
                 setPasswordNotMatch(passwordres.data.passwordNotMatch)
                 setPasswordMatch(passwordres.data.success)
 
                 setUpdatePassword(null)
 
-                const res = await axios.get(`http://localhost:3000/users-data/${userId}`, { headers: { Authorization: `Bearer ${token}` } })
+                const res = await axios.get(`${process.env.REACT_APP_API_URL}/users-data/${userId}`, { headers: { Authorization: `Bearer ${token}` } })
 
                 setUserData(res.data.user)
 

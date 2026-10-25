@@ -24,7 +24,7 @@ function UseHome({ contactUsData, setContactUsData }) {
 
         const token = localStorage.getItem("token")
 
-        const res = await axios.post(`http://localhost:3000/contact-us-data`, { contactUsData }, { headers: { Authorization: `Bearer ${token}` } })
+        const res = await axios.post(`${process.env.REACT_APP_API_URL}/contact-us-data`, { contactUsData }, { headers: { Authorization: `Bearer ${token}` } })
 
         setSubmit(res.data.success)
 

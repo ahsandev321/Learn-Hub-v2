@@ -26,20 +26,20 @@ function UseAdminDashboard({ messageindux, instructorId, studentindux, teacherCo
 
                 const token = localStorage.getItem("token")
 
-                const res = await axios.get(`http://localhost:3000/admin-details`, { headers: { Authorization: `Bearer ${token}` } })
+                const res = await axios.get(`${process.env.REACT_APP_API_URL}/admin-details`, { headers: { Authorization: `Bearer ${token}` } })
 
                 setStatus(res.data.details)
 
-                const allstudent = await axios.get(`http://localhost:3000/admin-get-users`, { headers: { Authorization: `Bearer ${token}` } })
+                const allstudent = await axios.get(`${process.env.REACT_APP_API_URL}/admin-get-users`, { headers: { Authorization: `Bearer ${token}` } })
 
                 setStudents(allstudent.data.allstudent)
 
-                const allteacher = await axios.get(`http://localhost:3000/admin-get-users`, { headers: { Authorization: `Bearer ${token}` } })
+                const allteacher = await axios.get(`${process.env.REACT_APP_API_URL}/admin-get-users`, { headers: { Authorization: `Bearer ${token}` } })
 
                 setTeachers(allteacher.data.allteacher)
 
 
-                const contactUsMessages = await axios.get(`http://localhost:3000/admin-contact-us-data`, { headers: { Authorization: `Bearer ${token}` } })
+                const contactUsMessages = await axios.get(`${process.env.REACT_APP_API_URL}/admin-contact-us-data`, { headers: { Authorization: `Bearer ${token}` } })
 
                 setMessages(contactUsMessages.data.contactUsData)
 
@@ -76,19 +76,19 @@ function UseAdminDashboard({ messageindux, instructorId, studentindux, teacherCo
                 const token = localStorage.getItem("token")
 
 
-                const teacherCoursesData = await axios.get(`http://localhost:3000/admin-get-instructor-data/${teacherCourses}`, { headers: { Authorization: `Bearer ${token}` } })
+                const teacherCoursesData = await axios.get(`${process.env.REACT_APP_API_URL}/admin-get-instructor-data/${teacherCourses}`, { headers: { Authorization: `Bearer ${token}` } })
 
                 setCourses(teacherCoursesData.data.data.courses)
 
-                const res = await axios.get(`http://localhost:3000/admin-details`, { headers: { Authorization: `Bearer ${token}` } })
+                const res = await axios.get(`${process.env.REACT_APP_API_URL}/admin-details`, { headers: { Authorization: `Bearer ${token}` } })
 
                 setStatus(res.data.details)
 
-                const allstudent = await axios.get(`http://localhost:3000/admin-get-users`, { headers: { Authorization: `Bearer ${token}` } })
+                const allstudent = await axios.get(`h${process.env.REACT_APP_API_URL}/admin-get-users`, { headers: { Authorization: `Bearer ${token}` } })
 
                 setStudents(allstudent.data.allstudent)
 
-                const allteacher = await axios.get(`http://localhost:3000/admin-get-users`, { headers: { Authorization: `Bearer ${token}` } })
+                const allteacher = await axios.get(`${process.env.REACT_APP_API_URL}/admin-get-users`, { headers: { Authorization: `Bearer ${token}` } })
 
                 setTeachers(allteacher.data.allteacher)
 
@@ -124,7 +124,7 @@ function UseAdminDashboard({ messageindux, instructorId, studentindux, teacherCo
                 const token = localStorage.getItem("token")
 
 
-                await axios.put("http://localhost:3000/admin-contact-us-data/mark-read", {}, { headers: { Authorization: `Bearer ${token}` } })
+                await axios.put(`${process.env.REACT_APP_API_URL}/admin-contact-us-data/mark-read`, {}, { headers: { Authorization: `Bearer ${token}` } })
 
                 const updateMessage = messages.map((messages) => ({
                     ...messages,
@@ -167,24 +167,24 @@ function UseAdminDashboard({ messageindux, instructorId, studentindux, teacherCo
                 const token = localStorage.getItem("token")
 
 
-                await axios.delete(`http://localhost:3000/course/${coursesindux}`, { headers: { Authorization: `Bearer ${token}` } })
+                await axios.delete(`${process.env.REACT_APP_API_URL}/course/${coursesindux}`, { headers: { Authorization: `Bearer ${token}` } })
 
                 setCoursesindux(null)
 
-                const teacherCoursesData = await axios.get(`http://localhost:3000/admin-get-instructor-data/${teacherCourses}`, { headers: { Authorization: `Bearer ${token}` } })
+                const teacherCoursesData = await axios.get(`${process.env.REACT_APP_API_URL}/admin-get-instructor-data/${teacherCourses}`, { headers: { Authorization: `Bearer ${token}` } })
 
                 setCourses(teacherCoursesData.data.data.courses)
 
 
-                const res = await axios.get(`http://localhost:3000/admin-details`, { headers: { Authorization: `Bearer ${token}` } })
+                const res = await axios.get(`${process.env.REACT_APP_API_URL}/admin-details`, { headers: { Authorization: `Bearer ${token}` } })
 
                 setStatus(res.data.details)
 
-                const allstudent = await axios.get(`http://localhost:3000/admin-get-users`, { headers: { Authorization: `Bearer ${token}` } })
+                const allstudent = await axios.get(`${process.env.REACT_APP_API_URL}/admin-get-users`, { headers: { Authorization: `Bearer ${token}` } })
 
                 setStudents(allstudent.data.allstudent)
 
-                const allteacher = await axios.get(`http://localhost:3000/admin-get-users`, { headers: { Authorization: `Bearer ${token}` } })
+                const allteacher = await axios.get(`${process.env.REACT_APP_API_URL}/admin-get-users`, { headers: { Authorization: `Bearer ${token}` } })
 
                 setTeachers(allteacher.data.allteacher)
 
@@ -222,18 +222,18 @@ function UseAdminDashboard({ messageindux, instructorId, studentindux, teacherCo
                 const token = localStorage.getItem("token")
 
 
-                await axios.delete(`http://localhost:3000/instructor/${instructorId}`, { headers: { Authorization: `Bearer ${token}` } })
+                await axios.delete(`${process.env.REACT_APP_API_URL}/instructor/${instructorId}`, { headers: { Authorization: `Bearer ${token}` } })
 
 
-                const res = await axios.get(`http://localhost:3000/admin-details`, { headers: { Authorization: `Bearer ${token}` } })
+                const res = await axios.get(`${process.env.REACT_APP_API_URL}/admin-details`, { headers: { Authorization: `Bearer ${token}` } })
 
                 setStatus(res.data.details)
 
-                const allstudent = await axios.get(`http://localhost:3000/admin-get-users`, { headers: { Authorization: `Bearer ${token}` } })
+                const allstudent = await axios.get(`${process.env.REACT_APP_API_URL}/admin-get-users`, { headers: { Authorization: `Bearer ${token}` } })
 
                 setStudents(allstudent.data.allstudent)
 
-                const allteacher = await axios.get(`http://localhost:3000/admin-get-users`, { headers: { Authorization: `Bearer ${token}` } })
+                const allteacher = await axios.get(`${process.env.REACT_APP_API_URL}/admin-get-users`, { headers: { Authorization: `Bearer ${token}` } })
 
                 setTeachers(allteacher.data.allteacher)
 
@@ -271,18 +271,18 @@ function UseAdminDashboard({ messageindux, instructorId, studentindux, teacherCo
                 const token = localStorage.getItem("token")
 
 
-                await axios.delete(`http://localhost:3000/student/${studentindux}`, { headers: { Authorization: `Bearer ${token}` } })
+                await axios.delete(`${process.env.REACT_APP_API_URL}/student/${studentindux}`, { headers: { Authorization: `Bearer ${token}` } })
 
 
-                const res = await axios.get(`http://localhost:3000/admin-details`, { headers: { Authorization: `Bearer ${token}` } })
+                const res = await axios.get(`${process.env.REACT_APP_API_URL}/admin-details`, { headers: { Authorization: `Bearer ${token}` } })
 
                 setStatus(res.data.details)
 
-                const allstudent = await axios.get(`http://localhost:3000/admin-get-users`, { headers: { Authorization: `Bearer ${token}` } })
+                const allstudent = await axios.get(`${process.env.REACT_APP_API_URL}/admin-get-users`, { headers: { Authorization: `Bearer ${token}` } })
 
                 setStudents(allstudent.data.allstudent)
 
-                const allteacher = await axios.get(`http://localhost:3000/admin-get-users`, { headers: { Authorization: `Bearer ${token}` } })
+                const allteacher = await axios.get(`${process.env.REACT_APP_API_URL}/admin-get-users`, { headers: { Authorization: `Bearer ${token}` } })
 
                 setTeachers(allteacher.data.allteacher)
 
@@ -319,11 +319,11 @@ function UseAdminDashboard({ messageindux, instructorId, studentindux, teacherCo
                 const token = localStorage.getItem("token")
 
 
-                await axios.delete(`http://localhost:3000/admin-contact-us-data/${messageindux}`, { headers: { Authorization: `Bearer ${token}` } })
+                await axios.delete(`${process.env.REACT_APP_API_URL}/admin-contact-us-data/${messageindux}`, { headers: { Authorization: `Bearer ${token}` } })
 
 
 
-                const contactUsMessages = await axios.get(`http://localhost:3000/admin-contact-us-data`, { headers: { Authorization: `Bearer ${token}` } })
+                const contactUsMessages = await axios.get(`${process.env.REACT_APP_API_URL}/admin-contact-us-data`, { headers: { Authorization: `Bearer ${token}` } })
 
                 setMessages(contactUsMessages.data.contactUsData)
 

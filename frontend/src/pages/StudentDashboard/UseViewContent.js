@@ -26,7 +26,7 @@ function UseViewContent({ contentStatus }) {
 
                 const studentId = localStorage.getItem("userId")
 
-                const res = await axios.get(`http://localhost:3000/content-view?studentId=${studentId}`, { headers: { Authorization: `Bearer ${token}` } })
+                const res = await axios.get(`${process.env.REACT_APP_API_URL}/content-view?studentId=${studentId}`, { headers: { Authorization: `Bearer ${token}` } })
 
                 setViewedContent(res.data.viewedContent)
 
@@ -61,11 +61,11 @@ function UseViewContent({ contentStatus }) {
 
                 const token = localStorage.getItem("token")
 
-                await axios.post("http://localhost:3000/content-view", contentStatus, { headers: { Authorization: `Bearer ${token}` } })
+                await axios.post(`${process.env.REACT_APP_API_URL}/content-view`, contentStatus, { headers: { Authorization: `Bearer ${token}` } })
 
                 const studentId = localStorage.getItem("userId")
 
-                const res = await axios.get(`http://localhost:3000/content-view?studentId=${studentId}`, { headers: { Authorization: `Bearer ${token}` } })
+                const res = await axios.get(`${process.env.REACT_APP_API_URL}/content-view?studentId=${studentId}`, { headers: { Authorization: `Bearer ${token}` } })
 
                 setViewedContent(res.data.viewedContent)
 

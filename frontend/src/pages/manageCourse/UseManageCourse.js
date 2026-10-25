@@ -26,7 +26,7 @@ function UseManageCourse({ courseData, deleteindux, editVideo, editVideoindux, s
 
                 const courseId = localStorage.getItem("courseId")
 
-                const res = await axios.get(`http://localhost:3000/videos?courseId=${courseId}`, { headers: { Authorization: `Bearer ${token}` } })
+                const res = await axios.get(`${process.env.REACT_APP_API_URL}/videos?courseId=${courseId}`, { headers: { Authorization: `Bearer ${token}` } })
 
                 setCoursedata(res.data.data)
 
@@ -60,11 +60,11 @@ function UseManageCourse({ courseData, deleteindux, editVideo, editVideoindux, s
 
                 const token = localStorage.getItem("token")
 
-                await axios.post("http://localhost:3000/videos", courseData, { headers: { Authorization: `Bearer ${token}` } })
+                await axios.post(`${process.env.REACT_APP_API_URL}/videos`, courseData, { headers: { Authorization: `Bearer ${token}` } })
 
                 const courseId = localStorage.getItem("courseId")
 
-                const res = await axios.get(`http://localhost:3000/videos?courseId=${courseId}`, { headers: { Authorization: `Bearer ${token}` } })
+                const res = await axios.get(`${process.env.REACT_APP_API_URL}/videos?courseId=${courseId}`, { headers: { Authorization: `Bearer ${token}` } })
 
                 setCoursedata(res.data.data)
 
@@ -100,13 +100,13 @@ function UseManageCourse({ courseData, deleteindux, editVideo, editVideoindux, s
 
                 const token = localStorage.getItem("token")
 
-                await axios.put(`http://localhost:3000/videos/${editVideoindux}`, editVideo, { headers: { Authorization: `Bearer ${token}` } })
+                await axios.put(`${process.env.REACT_APP_API_URL}/videos/${editVideoindux}`, editVideo, { headers: { Authorization: `Bearer ${token}` } })
 
                 setEditVideoindux(null)
 
                 const courseId = localStorage.getItem("courseId")
 
-                const res = await axios.get(`http://localhost:3000/videos?courseId=${courseId}`, { headers: { Authorization: `Bearer ${token}` } })
+                const res = await axios.get(`${process.env.REACT_APP_API_URL}/videos?courseId=${courseId}`, { headers: { Authorization: `Bearer ${token}` } })
 
                 setCoursedata(res.data.data)
 
@@ -146,13 +146,13 @@ function UseManageCourse({ courseData, deleteindux, editVideo, editVideoindux, s
 
                 const token = localStorage.getItem("token")
 
-                await axios.delete(`http://localhost:3000/videos/${deleteindux._id}`, { headers: { Authorization: `Bearer ${token}` } })
+                await axios.delete(`${process.env.REACT_APP_API_URL}/videos/${deleteindux._id}`, { headers: { Authorization: `Bearer ${token}` } })
 
                 setDeleteindux(null)
 
                 const courseId = localStorage.getItem("courseId")
 
-                const res = await axios.get(`http://localhost:3000/videos?courseId=${courseId}`, { headers: { Authorization: `Bearer ${token}` } })
+                const res = await axios.get(`${process.env.REACT_APP_API_URL}/videos?courseId=${courseId}`, { headers: { Authorization: `Bearer ${token}` } })
 
                 setCoursedata(res.data.data)
 

@@ -27,7 +27,7 @@ function UseManageAssignment({ courseAssignment, deleteindux, setDeleteindux, ed
 
                 const courseId = localStorage.getItem("courseId")
 
-                const res = await axios.get(`http://localhost:3000/assignments?courseId=${courseId}`, { headers: { Authorization: `Bearer ${token}` } })
+                const res = await axios.get(`${process.env.REACT_APP_API_URL}/assignments?courseId=${courseId}`, { headers: { Authorization: `Bearer ${token}` } })
 
                 setAssignmentdata(res.data.data)
 
@@ -63,12 +63,12 @@ function UseManageAssignment({ courseAssignment, deleteindux, setDeleteindux, ed
 
                 const token = localStorage.getItem("token")
 
-                await axios.post("http://localhost:3000/assignments", courseAssignment, { headers: { Authorization: `Bearer ${token}` } })
+                await axios.post(`${process.env.REACT_APP_API_URL}/assignments`, courseAssignment, { headers: { Authorization: `Bearer ${token}` } })
 
 
                 const courseId = localStorage.getItem("courseId")
 
-                const res = await axios.get(`http://localhost:3000/assignments?courseId=${courseId}`, { headers: { Authorization: `Bearer ${token}` } })
+                const res = await axios.get(`${process.env.REACT_APP_API_URL}/assignments?courseId=${courseId}`, { headers: { Authorization: `Bearer ${token}` } })
 
                 setAssignmentdata(res.data.data)
 
@@ -104,13 +104,13 @@ function UseManageAssignment({ courseAssignment, deleteindux, setDeleteindux, ed
 
                 const token = localStorage.getItem("token")
 
-                await axios.put(`http://localhost:3000/assignments/${editAssignmentindux}`, editAssignment, { headers: { Authorization: `Bearer ${token}` } })
+                await axios.put(`${process.env.REACT_APP_API_URL}/assignments/${editAssignmentindux}`, editAssignment, { headers: { Authorization: `Bearer ${token}` } })
 
                 setEditAssignmentindux(null)
 
                 const courseId = localStorage.getItem("courseId")
 
-                const res = await axios.get(`http://localhost:3000/assignments?courseId=${courseId}`, { headers: { Authorization: `Bearer ${token}` } })
+                const res = await axios.get(`${process.env.REACT_APP_API_URL}/assignments?courseId=${courseId}`, { headers: { Authorization: `Bearer ${token}` } })
 
                 setAssignmentdata(res.data.data)
 
@@ -147,13 +147,13 @@ function UseManageAssignment({ courseAssignment, deleteindux, setDeleteindux, ed
 
                 const token = localStorage.getItem("token")
 
-                await axios.delete(`http://localhost:3000/assignments/${deleteindux._id}`, { headers: { Authorization: `Bearer ${token}` } })
+                await axios.delete(`${process.env.REACT_APP_API_URL}/assignments/${deleteindux._id}`, { headers: { Authorization: `Bearer ${token}` } })
 
                 setDeleteindux(null)
 
                 const courseId = localStorage.getItem("courseId")
 
-                const res = await axios.get(`http://localhost:3000/assignments?courseId=${courseId}`, { headers: { Authorization: `Bearer ${token}` } })
+                const res = await axios.get(`${process.env.REACT_APP_API_URL}/assignments?courseId=${courseId}`, { headers: { Authorization: `Bearer ${token}` } })
 
                 setAssignmentdata(res.data.data)
 

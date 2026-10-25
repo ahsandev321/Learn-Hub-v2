@@ -32,7 +32,7 @@ function UseSignup({ saveData }) {
                 setError(false)
 
                 //Send data to API.
-                const res = await axios.post("/api/signup", saveData);
+                const res = await axios.post(`${process.env.REACT_APP_API_URL}/signup`, saveData);
 
                 //Check existing email.
                 setExistsData(res.data.existEmail)

@@ -28,7 +28,7 @@ function UseAdminCourses({ deleteindux, setDeleteindux }) {
 
                 const courseId = localStorage.getItem("courseId")
 
-                const teacherCoursesData = await axios.get(`http://localhost:3000/admin-get-courses-data/${courseId}`, { headers: { Authorization: `Bearer ${token}` } })
+                const teacherCoursesData = await axios.get(`${process.env.REACT_APP_API_URL}/admin-get-courses-data/${courseId}`, { headers: { Authorization: `Bearer ${token}` } })
 
                 setCoursesData(teacherCoursesData.data.data)
 
@@ -64,11 +64,11 @@ function UseAdminCourses({ deleteindux, setDeleteindux }) {
 
                 const courseId = localStorage.getItem("courseId")
 
-                await axios.delete(`http://localhost:3000/admin-courses-assignment-data/${deleteindux._id}`, { headers: { Authorization: `Bearer ${token}` } })
+                await axios.delete(`${process.env.REACT_APP_API_URL}/admin-courses-assignment-data/${deleteindux._id}`, { headers: { Authorization: `Bearer ${token}` } })
 
                 setDeleteindux(null)
 
-                const teacherCoursesData = await axios.get(`http://localhost:3000/admin-get-courses-data/${courseId}`, { headers: { Authorization: `Bearer ${token}` } })
+                const teacherCoursesData = await axios.get(`${process.env.REACT_APP_API_URL}/admin-get-courses-data/${courseId}`, { headers: { Authorization: `Bearer ${token}` } })
 
                 setCoursesData(teacherCoursesData.data.data)
 
@@ -106,11 +106,11 @@ function UseAdminCourses({ deleteindux, setDeleteindux }) {
 
                 const courseId = localStorage.getItem("courseId")
 
-                await axios.delete(`http://localhost:3000/admin-courses-video-data/${deleteindux._id}`, { headers: { Authorization: `Bearer ${token}` } })
+                await axios.delete(`${process.env.REACT_APP_API_URL}/admin-courses-video-data/${deleteindux._id}`, { headers: { Authorization: `Bearer ${token}` } })
 
                 setDeleteindux(null)
 
-                const teacherCoursesData = await axios.get(`http://localhost:3000/admin-get-courses-data/${courseId}`, { headers: { Authorization: `Bearer ${token}` } })
+                const teacherCoursesData = await axios.get(`${process.env.REACT_APP_API_URL}/admin-get-courses-data/${courseId}`, { headers: { Authorization: `Bearer ${token}` } })
 
                 setCoursesData(teacherCoursesData.data.data)
 

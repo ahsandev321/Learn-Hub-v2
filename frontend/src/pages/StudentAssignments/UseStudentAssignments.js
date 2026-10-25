@@ -25,7 +25,7 @@ function UseStudentAssignments() {
 
                 const studentId = localStorage.getItem("selectedStudentId")
 
-                const res = await axios.get(`http://localhost:3000/submit-assignment?studentId=${studentId}`, { headers: { Authorization: `Bearer ${token}` } })
+                const res = await axios.get(`${process.env.REACT_APP_API_URL}/submit-assignment?studentId=${studentId}`, { headers: { Authorization: `Bearer ${token}` } })
 
                 setAssignments(res.data.assignments)
 

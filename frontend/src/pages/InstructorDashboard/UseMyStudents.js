@@ -27,17 +27,17 @@ function UseMyStudents({ deleteindux, readAssignments }) {
 
                 const instructorId = localStorage.getItem("userId")
 
-                const unReadres = await axios.get(`http://localhost:3000/unread-assignments?instructorId=${instructorId}`, { headers: { Authorization: `Bearer ${token}` } })
+                const unReadres = await axios.get(`${process.env.REACT_APP_API_URL}/unread-assignments?instructorId=${instructorId}`, { headers: { Authorization: `Bearer ${token}` } })
 
                 setUnreadAssignments(unReadres.data.unreadAssignments)
 
-                const studentres = await axios.get(`http://localhost:3000/my-students?instructorId=${instructorId}`, { headers: { Authorization: `Bearer ${token}` } })
+                const studentres = await axios.get(`${process.env.REACT_APP_API_URL}/my-students?instructorId=${instructorId}`, { headers: { Authorization: `Bearer ${token}` } })
 
                 setStudents(studentres.data.students)
 
                 const userId = localStorage.getItem("userId")
 
-                const coursesres = await axios.get(`http://localhost:3000/my-courses?userId=${userId}`, { headers: { Authorization: `Bearer ${token}` } })
+                const coursesres = await axios.get(`${process.env.REACT_APP_API_URL}/my-courses?userId=${userId}`, { headers: { Authorization: `Bearer ${token}` } })
 
                 setMycoures(coursesres.data)
 
@@ -69,7 +69,7 @@ function UseMyStudents({ deleteindux, readAssignments }) {
                 
                 const token = localStorage.getItem("token")
 
-                await axios.put(`http://localhost:3000/read-assignments/${readAssignments.studentId}`, {}, { headers: { Authorization: `Bearer ${token}` } })
+                await axios.put(`${process.env.REACT_APP_API_URL}/read-assignments/${readAssignments.studentId}`, {}, { headers: { Authorization: `Bearer ${token}` } })
 
 
                 setLoading(false)
@@ -100,16 +100,16 @@ function UseMyStudents({ deleteindux, readAssignments }) {
                 
                 const token = localStorage.getItem("token")
 
-                await axios.delete(`http://localhost:3000/remove-students/${deleteindux.studentId}/${deleteindux.courseId}`, { headers: { Authorization: `Bearer ${token}` } })
+                await axios.delete(`${process.env.REACT_APP_API_URL}/remove-students/${deleteindux.studentId}/${deleteindux.courseId}`, { headers: { Authorization: `Bearer ${token}` } })
 
-                await axios.delete(`http://localhost:3000/delete-assignments/${deleteindux.studentId}/${deleteindux.courseId}`, { headers: { Authorization: `Bearer ${token}` } })
+                await axios.delete(`${process.env.REACT_APP_API_URL}/delete-assignments/${deleteindux.studentId}/${deleteindux.courseId}`, { headers: { Authorization: `Bearer ${token}` } })
 
-                await axios.delete(`http://localhost:3000/delete-content-viewed/${deleteindux.studentId}/${deleteindux.courseId}`, { headers: { Authorization: `Bearer ${token}` } })
+                await axios.delete(`${process.env.REACT_APP_API_URL}/delete-content-viewed/${deleteindux.studentId}/${deleteindux.courseId}`, { headers: { Authorization: `Bearer ${token}` } })
 
                 //Refresh the student list after deletion.
                 const instructorId = localStorage.getItem("userId")
 
-                const studentres = await axios.get(`http://localhost:3000/my-students?instructorId=${instructorId}`, { headers: { Authorization: `Bearer ${token}` } })
+                const studentres = await axios.get(`${process.env.REACT_APP_API_URL}/my-students?instructorId=${instructorId}`, { headers: { Authorization: `Bearer ${token}` } })
 
                 setStudents(studentres.data.students)
 

@@ -31,7 +31,7 @@ function UseMycourses() {
                 const token = localStorage.getItem("token")
 
                 //Get the courses linked to the student.
-                const res = await axios.get(`http://localhost:3000/student-courses?studentId=${studentId}`, { headers: { Authorization: `Bearer ${token}` } })
+                const res = await axios.get(`${process.env.REACT_APP_API_URL}/student-courses?studentId=${studentId}`, { headers: { Authorization: `Bearer ${token}` } })
 
                 setMyCoures(res.data.courses)
 

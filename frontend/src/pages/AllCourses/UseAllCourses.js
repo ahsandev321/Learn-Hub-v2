@@ -19,7 +19,7 @@ function UseAllCourses() {
                 setLoading(true)
                 setError(false)
 
-                const res = await axios.get("http://localhost:3000/courses")
+                const res = await axios.get(`${process.env.REACT_APP_API_URL}/courses`)
 
                 setcoures(res.data)
 
