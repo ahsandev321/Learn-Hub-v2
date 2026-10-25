@@ -14,8 +14,8 @@
     "mongoose",
     "cloudinary",
     "jsonwebtoken",
-    "bcrypt"
-    "socket.io"
+    "bcrypt",
+    "socket.io",
     "multer"
   ]
 
