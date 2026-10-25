@@ -2,6 +2,11 @@ const Course = require("../model/CoursesModel")
 const Assignment = require("../model/AssignmentModel")
 const Video = require("../model/VideoModel")
 const Enrollment = require("../model/EnrollmentModel")
+const ContentView = require("../model/ContentViewModel")
+const StudentAssignmet = require("../model/StudentAssignmetModel")
+
+const { getSocketIo } = require("../Socket")
+
 const { uploadfiles, deletefile } = require('../config/Cloudinary')
 
 
@@ -61,7 +66,11 @@ const updateCourses = async (req, res) => {
          //Upload the new thumbnail and delete the old one.
          const updateimage = await uploadfiles(req.file.path)
 
-         await deletefile(courses.thumbnailPublicId, "image")
+         const result = await deletefile(courses.thumbnailPublicId, "image")
+
+         if (!result || result.result !== "ok") {
+            throw new Error("Thumbnail deletion failed")
+         }
 
          courses.thumbnail = updateimage.secure_url
          courses.thumbnailPublicId = updateimage.public_id
@@ -104,7 +113,11 @@ const deleteCourses = async (req, res) => {
       }
 
       //Delete the course thumbnail from cloudinary.
-      await deletefile(courses.thumbnailPublicId, "image")
+      const result = await deletefile(courses.thumbnailPublicId, "image")
+
+      if (!result || result.result !== "ok") {
+         throw new Error("Thumbnail deletion failed")
+      }
 
       //Delete course videos and their uploaded files.
       const video = await Video.find({
@@ -113,7 +126,13 @@ const deleteCourses = async (req, res) => {
 
       for (let i = 0; i < video.length; i++) {
 
-         await deletefile(video[i].videoPublicId, "video")
+         const result = await deletefile(video[i].videoPublicId, "video")
+
+
+         if (!result || result.result !== "ok") {
+            throw new Error("video deletion failed")
+         }
+
 
          await Video.findByIdAndDelete(video[i]._id)
 
@@ -126,9 +145,37 @@ const deleteCourses = async (req, res) => {
 
       for (let i = 0; i < assignment.length; i++) {
 
-         await deletefile(assignment[i].filePublicId, "raw")
+         const result = await deletefile(assignment[i].filePublicId, "raw")
+
+         if (!result || result.result !== "ok") {
+            throw new Error("Assignment deletion failed")
+         }
 
          await Assignment.findByIdAndDelete(assignment[i]._id)
+
+      }
+
+      //Delete student assignment
+      const studentAssignment = []
+
+      for (let i = 0; i < assignment.length; i++) {
+
+         const submission = await StudentAssignmet.find({
+            assignment: assignment[i]._id
+         })
+
+         studentAssignment.push(...submission)
+      }
+
+      for (let i = 0; i < studentAssignment.length; i++) {
+
+         const result = await deletefile(studentAssignment[i].filePublicId, "raw")
+
+         if (!result || result.result !== "ok") {
+            throw new Error("Student assignment deletion failed")
+         }
+
+         await StudentAssignmet.findByIdAndDelete(studentAssignment[i]._id)
 
       }
 
@@ -141,8 +188,25 @@ const deleteCourses = async (req, res) => {
          await Enrollment.findByIdAndDelete(enrollment[i]._id)
       }
 
+
+       //Delete the course content view record from the database.
+      await ContentView.deleteMany({
+         course: req.params.id
+
+      })
+
       //Delete the course record from the database.
       await Course.findByIdAndDelete(req.params.id)
+
+      //Notify the student through Socket.IO.
+      const studentio = getSocketIo()
+
+      for (let i = 0; i < enrollment.length; i++) {
+
+         studentio.to(`student-${enrollment[i].student}`).emit("courseDeleted")
+      }
+
+
 
       res.send({
          succcess: true,

@@ -4,6 +4,8 @@ import UseMycourses from './UseMycourses'
 import { Oval } from 'react-loader-spinner'
 import CourseCards from '../../components/CourseCards/CourseCards'
 import { useNavigate } from 'react-router-dom'
+import { FaGear } from "react-icons/fa6"
+import { NavLink } from 'react-router-dom'
 
 function StudentDashboard() {
 
@@ -14,8 +16,8 @@ function StudentDashboard() {
   //Open the selected course and save ites ID
   const handleOpen = (data) => {
 
-    navigae("/studentCourses")
     localStorage.setItem("myCourseId", data._id)
+    navigae("/studentCourses")
 
   }
 
@@ -45,7 +47,20 @@ function StudentDashboard() {
         {/*Dashboard heading. */}
         <div className='studentDashboard-heading-section'>
 
-          <h1>Courses</h1>
+
+        <div className='studentDashboard-setting-section'>
+
+          <h1>My Courses</h1>
+
+          <div className='studentDashboard-setting-button-section'>
+
+            <NavLink to='/settings'>
+              <button className='studentDashboard-setting-button'> <FaGear className='studentDashboard-setting-button-icon' /> </button>
+            </NavLink>
+
+          </div>
+        </div>
+         
         </div>
         {/*Show course cards or an empty state. */}
         {coursesList.length === 0 ? (

@@ -51,6 +51,9 @@ function UseLogin({ saveData }) {
 
                     //Save user role.
                     localStorage.setItem("role", res.data.role)
+
+                    //JWT token after successfull login
+                    localStorage.setItem("token", res.data.token)
                 }
 
                 //Hide the loading screen.

@@ -3,10 +3,19 @@ import { Navigate } from 'react-router-dom'
 
 function Securerouter({ children, allowedRole }) {
 
-    //Get login status and user role.
+    //Get users login status, token and role.
+    const token = localStorage.getItem("token")
+
     const login = localStorage.getItem("login")
 
     const role = localStorage.getItem("role")
+
+    //redirect users who do not have a tocken.
+    if (!token) {
+        return (
+            <Navigate to='/login' replace />
+        )
+    }
 
     //Redirect users who are not loggrd in.
     if (login !== "true") {
@@ -18,7 +27,7 @@ function Securerouter({ children, allowedRole }) {
     //Redirect users who do not have the required role.
     if (role !== allowedRole) {
         return (
-            <Navigate to='/login' replace />
+            <Navigate to='/' replace />
 
         )
     }

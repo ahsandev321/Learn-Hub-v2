@@ -40,6 +40,13 @@ const studentAssignmentRouter =require("./routers/StudentAssignmetrouter")
 
 const contentViewRouter =require("./routers/ContentViewrouter")
 
+const adminRouter =require("./routers/AdminRouter")
+
+const settingrouter =require("./routers/SettingRouter")
+
+const contactUSRouter =require("./routers/ContactUsrouter")
+
+
 //Create HTTP server for express.
 const server = http.createServer(app)
 
@@ -74,11 +81,21 @@ app.use('/', studentAssignmentRouter);
 
 app.use('/', contentViewRouter)
 
+app.use('/', adminRouter)
+
+app.use('/', settingrouter)
+
+app.use('/', contactUSRouter)
+
 //Handle new Socket.IO connections.
 io.on("connection", (socket)=>{
 
     socket.on("joinStudentRoom", (studentId)=>{
         socket.join(`student-${studentId}`)
+    })
+    
+     socket.on("joinCourseRoom", (courseId)=>{
+        socket.join(`course-${courseId}`)
     })
 
 })

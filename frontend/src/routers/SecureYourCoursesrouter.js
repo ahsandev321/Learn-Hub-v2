@@ -4,8 +4,17 @@ import { Navigate } from 'react-router-dom'
 
 function SecureYourCoursesrouter({ children }) {
 
-  //Check if the user has their own courses.
+  //Get the users token and course status.
+  const token = localStorage.getItem("token")
+
   const myCourses = localStorage.getItem("myCourses")
+
+  //redirect users who do not have a tocken.
+  if (!token) {
+    return (
+      <Navigate to='/login' replace />
+    )
+  }
 
   //Redirect users who do not have their own courses.
   if (myCourses !== "true") {

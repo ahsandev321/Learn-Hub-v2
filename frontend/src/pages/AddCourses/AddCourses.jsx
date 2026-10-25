@@ -3,7 +3,7 @@ import './AddCourses.css'
 import TeacherDashboardMenue from '../../components/TeacherDashboardMenue/TeacherDashboardMenue'
 import UseAddcourses from './UseAddcourses'
 import { Oval } from 'react-loader-spinner'
-import AddCoursesComponent from './AddCoursesComponent'
+import TeacherCourseCard from '../../components/TeacherCourseCard/TeacherCourseCard.jsx'
 function AddCourses() {
 
     //Store the courses form fiels values.
@@ -25,7 +25,7 @@ function AddCourses() {
     const [courseEditData, setCourseEditData] = useState(null)
 
     //Handle course API operations and retrieve the teacher's course.
-    const { loading, error, myCourse } = UseAddcourses({ courseData, courseEditData, editindux, setEditindux, deleteindux, setDeleteindux })
+    const { loading, error, myCourse } = UseAddcourses({ courseData, courseEditData, setCourseEditData, editindux, setEditindux, deleteindux, setDeleteindux })
 
     //Update local storage when the course list changes.
     useEffect(() => {
@@ -57,7 +57,7 @@ function AddCourses() {
         setTitle(data.title)
         setDescription(data.description)
         setCategory(data.category)
-        setPrice(data.price)
+        setPrice("0")
 
         //Store the selected course ID for the update operation.
         setEditindux(dataId)
@@ -72,7 +72,7 @@ function AddCourses() {
     //render a course card for each course.
     const coursesCard = myCourse.map((myCourse) => {
         return (
-            <AddCoursesComponent
+            <TeacherCourseCard
                 key={myCourse._id}
                 dataId={myCourse._id}
                 editData={editData}
@@ -123,7 +123,7 @@ function AddCourses() {
         setTitle('')
         setDescription('')
         setCategory('')
-        setPrice('')
+        setPrice('0')
     }
 
     return (

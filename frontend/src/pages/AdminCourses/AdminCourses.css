@@ -1,0 +1,485 @@
+/*Reset default spacing.*/
+* {
+    padding: 0%;
+    margin: 0%;
+}
+/*Main course container.*/
+.admin-course-maincontainer {
+    width: 100%;
+    height: auto;
+    padding-top: 130px;
+    overflow: hidden;
+}
+/*Main course content section.*/
+.admin-course-data-section {
+    width: 100%;
+    height: auto;
+    color: gray;
+    text-align: center;
+    font-size: 20px;
+    margin-top: 30px;
+
+}
+
+/*Layout for sidebar and content display.*/
+.admin-course-data {
+    width: 100%;
+    min-height: 600px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+}
+
+/*Open and close sidebar styles.*/
+.admin-course-list-slider-open {
+    position: absolute;
+    width: 290px;
+    height: auto;
+    text-align: start;
+    transition: 0.3s;
+    border: 2px solid gray;
+    margin-top: 30px;
+    background-color: white;
+    overflow: hidden;
+    z-index: 10;
+
+}
+
+.admin-course-list-slider-close {
+    position: absolute;
+    width: 75px;
+    height: auto;
+    text-align: start;
+    border: 2px solid gray;
+    margin-top: 30px;
+    overflow: hidden;
+    background-color: white;
+    transition: 0.3s;
+    z-index: 10;
+
+
+}
+
+.admin-course-list-slider-button {
+    width: 50px;
+    height: 38px;
+    margin-left: 10px;
+    outline: none;
+    border: 2px solid gray;
+    font-size: 20px;
+    color: white;
+    border-radius: 10px;
+    display: block;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 10px;
+    background-color: rgb(81, 81, 81);
+
+}
+
+.admin-course-list-slider-button:active {
+    color: rgb(213, 212, 212);
+    background-color: rgb(58, 58, 58);
+}
+
+.admin-course-list-no-titles-section {
+    width: 235px;
+    height: 600px;
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 75px;
+    overflow: hidden;
+}
+
+/*Display the course content list.*/
+.admin-course-list-titles-section {
+    width: 235px;
+    height: 500px;
+    margin-top: 50px;
+    display: flex;
+    align-items: start;
+    margin-left: 75px;
+    overflow: scroll;
+
+}
+
+.admin-course-list-titles-maincontainer {
+    width: 100%;
+    height: auto;
+}
+
+.admin-course-list-titles-content-section {
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+/*Style normal and selected content items.*/
+.admin-course-list-button {
+    width: 92%;
+    min-height: 55px;
+    height: auto;
+    text-align: center;
+    color: gray;
+    font-size: 10px;
+    margin-right: 10px;
+    text-align: start;
+    padding-left: 10px;
+    padding-right: 25px;
+    background-color: white;
+    border: 2px solid white;
+    overflow: break-word;
+    word-break: break-word;
+
+}
+
+.admin-course-list-button:hover {
+    color: gray;
+    font-size: 10px;
+    background-color: rgb(226, 225, 225);
+
+}
+
+.admin-course-list-active-button {
+    width: 92%;
+    min-height: 55px;
+    height: auto;
+    color: gray;
+    font-size: 10px;
+    text-align: start;
+    background-color: rgb(226, 225, 225);
+    margin-right: 10px;
+    border: none;
+    padding-left: 10px;
+    padding-right: 25px;
+    overflow: break-word;
+    word-break: break-word;
+    border-left: 7px solid green;
+
+
+}
+
+
+.admin-course-list-more-option-button {
+    position: absolute;
+    right: 10px;
+    top: 15px;
+    width: 25px;
+    height: 25px;
+    background-color: rgb(224, 224, 224);
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: gray;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: 10px;
+}
+
+.admin-course-list-more-option-button:hover {
+
+    background-color: rgb(201, 199, 199);
+    color: gray;
+    border-radius: 100%;
+}
+
+.admin-course-list-more-option-button:active {
+
+    background-color: rgb(181, 179, 179);
+    color: gray;
+    border-radius: 100%;
+}
+
+/*More option menue for Edit and delete.*/
+.admin-course-list-more-option-section {
+    position: absolute;
+    top: 50px;
+    right: 37px;
+    width: 100px;
+    height: auto;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 2px 2px 15px rgb(160, 160, 160);
+    z-index: 50;
+    background-color: rgb(240, 240, 240);
+    transition: 0.3s;
+}
+
+.admin-course-list-option-button-section {
+    width: 100%;
+    height: auto;
+}
+
+.admin-course-list-option-button {
+    width: 100%;
+    height: 40px;
+    font-size: 17px;
+    color: white;
+    background-color: rgb(150, 149, 149);
+    border: none;
+}
+
+.admin-course-list-option-button:hover {
+    width: 100%;
+    height: 40px;
+    font-size: 17px;
+    color: rgb(243, 241, 241);
+    background-color: rgb(132, 131, 131);
+    border: none;
+}
+
+.admin-course-list-option-button:active {
+    width: 100%;
+    height: 40px;
+    font-size: 17px;
+    color: rgb(223, 222, 222);
+    background-color: rgb(111, 111, 111);
+    border: none;
+}
+
+/*Main area for selected course content.*/
+.admin-course-data-display-maincontainer {
+    width: 100%;
+    height: 600px;
+    margin-top: 30px;
+    border: 2px solid gray;
+    overflow: scroll;
+}
+
+/*Display the selected video.*/
+.admin-course-data-video-section {
+    width: 90%;
+    height: auto;
+    text-align: center;
+    margin-left: auto;
+
+}
+
+.admin-course-data-video {
+    width: 75%;
+    height: 550px;
+
+}
+
+.admin-course-data-video-title {
+    width: 100%;
+    height: auto;
+    text-align: center;
+    font-size: 20px;
+    overflow: break-word;
+    word-break: break-word;
+}
+
+/*Display the selected assignment.*/
+.admin-course-data-assignment-section {
+    width: 90%;
+    height: auto;
+    text-align: start;
+    margin-left: auto;
+    text-align: center;
+    font-size: 20px;
+    padding-top: 70px;
+}
+
+.admin-course-data-assignment-title-section {
+    width: 70%;
+    height: auto;
+    font-size: 25px;
+    text-align: start;
+    padding: 30px;
+    margin: auto;
+    overflow: break-word;
+    word-break: break-word;
+
+}
+
+.admin-course-data-assignment {
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
+}
+
+.admin-course-data-assignment-link {
+    width: auto;
+    height: auto;
+    text-decoration: none;
+}
+
+/*Show a message when no content is selected.*/
+.admin-course-no-data-section {
+    width: 100%;
+    height: 280px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+}
+/*Media queries for responsive design*/
+@media (max-width:1024px) {
+    .admin-course-data {
+        width: 100%;
+        min-height: 520px;
+    }
+
+    .admin-course-list-no-titles-section {
+        width: 235px;
+        height: 420px;
+
+
+    }
+
+    .admin-course-list-titles-section {
+        width: 235px;
+        height: 420px;
+    }
+
+    .admin-course-data-display-maincontainer {
+        width: 100%;
+        height: 520px;
+    }
+
+    .admin-course-data-video-section {
+        width: 90%;
+        height: auto;
+        text-align: center;
+        margin-left: auto;
+
+    }
+
+    .admin-course-data-video {
+        width: 92%;
+        height: 490px;
+
+    }
+
+}
+
+
+@media (max-width:768px) {
+
+    .admin-course-data-section {
+        width: 100%;
+        height: auto;
+        font-size: 15px;
+        margin-top: 30px;
+
+    }
+
+    .admin-course-list-slider-button {
+        width: 40px;
+        height: 30px;
+        font-size: 15px;
+    }
+
+    .admin-course-data {
+        width: 100%;
+        min-height: 450px;
+    }
+
+    .admin-course-list-no-titles-section {
+        width: 235px;
+        height: 355px;
+
+
+    }
+
+    .admin-course-list-titles-section {
+        width: 235px;
+        height: 355px;
+    }
+
+    .admin-course-data-display-maincontainer {
+        width: 100%;
+        height: 450px;
+    }
+
+
+    .admin-course-data-video {
+        width: 92%;
+        height: 450px;
+
+    }
+
+
+    .admin-course-data-video-title {
+        width: 100%;
+        height: auto;
+        text-align: center;
+        font-size: 12px;
+    }
+
+    .admin-course-data-assignment-section {
+        width: 90%;
+        height: auto;
+        font-size: 15px;
+    }
+
+    .admin-course-data-assignment-title-section {
+        width: 70%;
+        height: auto;
+        font-size: 20px;
+
+    }
+
+
+}
+
+@media (max-width:610px) {
+  
+    .admin-course-data {
+        width: 100%;
+        min-height: 350px;
+    }
+
+    .admin-course-list-no-titles-section {
+        width: 235px;
+        height: 257px;
+
+
+    }
+
+    .admin-course-list-titles-section {
+        width: 235px;
+        height: 257px;
+    }
+
+    .admin-course-data-display-maincontainer {
+        width: 100%;
+        height: 350px;
+    }
+
+    .admin-course-data-video-section {
+        width: 80%;
+        height: auto;
+        text-align: center;
+        margin-left: auto;
+
+    }
+
+    .admin-course-data-video {
+        width: 92%;
+        height: 350px;
+
+    }
+
+    .admin-course-data-video-title {
+        width: 100%;
+        height: auto;
+        text-align: center;
+        font-size: 10px;
+    }
+
+    .admin-course-data-assignment-section {
+        width: 90%;
+        height: auto;
+        font-size: 10px;
+    }
+
+}

@@ -4,6 +4,8 @@ import './Teacher.css'
 import UseMyStudents from './UseMyStudents'
 import InstructorDashboardComponent from './InstructorDashboardComponent'
 import { Oval } from 'react-loader-spinner'
+import { FaGear } from "react-icons/fa6"
+import { NavLink } from 'react-router-dom'
 
 
 function InstructorDashboard() {
@@ -62,7 +64,22 @@ function InstructorDashboard() {
 
       <TeacherDashboardMenue />
 
+      
+
       <div className='teacher-dashboard-main-contaniner'>
+
+        <div className='teacher-dashboard-setting-section'>
+
+        <h1>My Teaching </h1>
+
+        <div className='teacher-dashboard-setting-button-section'>
+
+          <NavLink to='/settings'>
+            <button className='teacher-dashboard-setting-button'> <FaGear className='teacher-dashboard-setting-button-icon' /> </button>
+          </NavLink>
+
+        </div>
+      </div>
 
         {/*Display courses, student, and enrllment statistics. */}
         <div className='teacher-dashboard-card-section'>

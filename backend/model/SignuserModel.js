@@ -23,15 +23,10 @@ const userSchema = mongoose.Schema({
         type: String,
         required: true
     },
-    //Store the password confirmation.
-    confirmPassword: {
-        type: String,
-        required: true
-    },
     //Define the user's role and default access level.
     role: {
         type: String,
-        enum: ["student", "instructor"],
+        enum: ["admin", "student", "instructor"],
         default: "student"
     }
 

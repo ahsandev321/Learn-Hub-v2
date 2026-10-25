@@ -25,8 +25,9 @@ function UseEnrollment({ enrolledData }) {
                 setEnrollederror(false)
 
 
+                const token = localStorage.getItem("token")
 
-                const res = await axios.post("http://localhost:3000/enroll-free", enrolledData)
+                const res = await axios.post("http://localhost:3000/enroll-free", enrolledData, { headers: { Authorization: `Bearer ${token}` } })
 
 
                 //Store the enrollment result returned by the API.

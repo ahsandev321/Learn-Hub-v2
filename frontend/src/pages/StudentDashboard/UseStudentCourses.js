@@ -43,8 +43,10 @@ function UseStudentCourses({ assignment }) {
                     return
                 }
 
+                const token = localStorage.getItem("token")
+
                 //Check if the student is enrolled in this course.
-                const enrollmentRes = await axios.get(`http://localhost:3000/my-courses?studentId=${studentId}`)
+                const enrollmentRes = await axios.get(`http://localhost:3000/student-courses?studentId=${studentId}`, { headers: { Authorization: `Bearer ${token}` } })
 
                 const enrolled = enrollmentRes.data.courses.some((items) => items.courses?._id?.toString() === myCourseId.toString())
 
@@ -56,19 +58,19 @@ function UseStudentCourses({ assignment }) {
                 }
 
                 //Fetch videos and assignments for the selected course.
-                const videores = await axios.get(`http://localhost:3000/videos?courseId=${myCourseId}`)
+                const videores = await axios.get(`http://localhost:3000/videos?courseId=${myCourseId}`, { headers: { Authorization: `Bearer ${token}` } })
 
                 setVideos(videores.data.data)
 
 
 
-                const assignmetres = await axios.get(`http://localhost:3000/assignments?courseId=${myCourseId}`)
+                const assignmetres = await axios.get(`http://localhost:3000/assignments?courseId=${myCourseId}`, { headers: { Authorization: `Bearer ${token}` } })
 
                 setAssignmets(assignmetres.data.data)
 
 
                 //Fetch the student's submitted assignments.
-                const res = await axios.get(`http://localhost:3000/submit-assignment?studentId=${studentId}`)
+                const res = await axios.get(`http://localhost:3000/submit-assignment?studentId=${studentId}`, { headers: { Authorization: `Bearer ${token}` } })
 
                 setStudentAssignmet(res.data.assignments)
 
@@ -103,13 +105,13 @@ function UseStudentCourses({ assignment }) {
                 setLoading(true)
                 setError(false)
 
+                const token = localStorage.getItem("token")
 
-
-                await axios.post("http://localhost:3000/submit-assignment", assignment)
+                await axios.post("http://localhost:3000/submit-assignment", assignment, { headers: { Authorization: `Bearer ${token}` } })
 
                 const studentId = localStorage.getItem("userId")
 
-                const res = await axios.get(`http://localhost:3000/submit-assignment?studentId=${studentId}`)
+                const res = await axios.get(`http://localhost:3000/submit-assignment?studentId=${studentId}`, { headers: { Authorization: `Bearer ${token}` } })
 
                 setStudentAssignmet(res.data.assignments)
 

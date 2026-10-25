@@ -19,7 +19,6 @@ function UseAllCourses() {
                 setLoading(true)
                 setError(false)
 
-
                 const res = await axios.get("http://localhost:3000/courses")
 
                 setcoures(res.data)

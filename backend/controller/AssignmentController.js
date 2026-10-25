@@ -51,7 +51,11 @@ const updateAssignment = async (req, res) => {
             //Upload the new file and remove the old one. 
             const editAssignment = await uploadfiles(req.file.path)
 
-            await deletefile(assignment.filePublicId, "raw")
+            const result = await deletefile(assignment.filePublicId, "raw")
+
+            if (!result || result.result !== "ok") {
+                throw new Error("Assignment deletion failed")
+            }
 
             assignment.fileUrl = editAssignment.secure_url
             assignment.filePublicId = editAssignment.public_id
@@ -108,11 +112,18 @@ const deleteAssignment = async (req, res) => {
         const assignment = await Assignment.findById(req.params.id)
 
         if (!assignment) {
-            console.log("Assignmet not found")
+            return res.status(404).json({
+                success: false,
+                message: "Assignment not found"
+            })
         }
 
         //Remove the file from cloudinary.
-        await deletefile(assignment.filePublicId, "raw")
+        const result = await deletefile(assignment.filePublicId, "raw")
+
+        if (!result || result.result !== "ok") {
+            throw new Error("Assignment deletion failed")
+        }
 
         //Delete the assignment record from database.
         await Assignment.findByIdAndDelete(req.params.id)

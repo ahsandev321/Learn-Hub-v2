@@ -48,7 +48,7 @@ const coursesSchema = mongoose.Schema({
 
 }, {timestamps: true})
 
-//Create the course mmodel.
+//Create the course model.
 const Course = mongoose.model("Course", coursesSchema);
 
 module.exports = Course;

@@ -44,17 +44,58 @@ function StudentCourses() {
 
     const studentId = localStorage.getItem("userId")
 
+    const courseId = localStorage.getItem("myCourseId")
+
     socket.emit("joinStudentRoom", studentId)
+
+    socket.emit("joinCourseRoom", courseId)
 
 
     socket.on("studentRemove", () => {
-
 
       navigate("/studentDashboard", { replace: true })
 
       clearCourseData()
 
     })
+
+    socket.on("courseDeleted", () => {
+
+      navigate("/studentDashboard", { replace: true })
+
+      clearCourseData()
+
+    })
+
+    socket.on("studentAccountDeleted", () => {
+      localStorage.removeItem("login")
+      localStorage.removeItem("role")
+      localStorage.removeItem("userId")
+      localStorage.removeItem("myCourses")
+      localStorage.removeItem("courseId")
+      localStorage.removeItem("myCourseId")
+      localStorage.removeItem("selectedStudentId")
+      localStorage.removeItem("token")
+
+      //Redirect the user to the login page.
+      navigate('/login', { replace: true })
+
+      //Notify other components about the login status change.
+      window.dispatchEvent(new Event("loginChanged"))
+
+      clearCourseData()
+
+      navigate("/login", { replace: true })
+
+
+
+    })
+
+    return () => {
+      socket.disconnect()
+    }
+
+
   }, [])
 
 

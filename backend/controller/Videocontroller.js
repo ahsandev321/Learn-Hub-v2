@@ -62,14 +62,18 @@ const updateVideo = async (req, res) => {
 
             const editVideo = await uploadvideofiles(req.file.path)
 
-            await deletefile(video.videoPublicId, "video")
+            const result = await deletefile(video.videoPublicId, "video")
+
+            if (!result || result.result !== "ok") {
+                throw new Error("Video deletion failed")
+            }
 
             video.videoUrl = editVideo.secure_url
             video.videoPublicId = editVideo.public_id
         }
 
-            //Update the video title and course.
-            video.title = req.body.title,
+        //Update the video title and course.
+        video.title = req.body.title,
             video.course = req.body.courseId
 
         await video.save()
@@ -113,10 +117,17 @@ const deleteUploadVideo = async (req, res) => {
         const video = await Video.findById(req.params.id)
 
         if (!video) {
-            console.log("video not found")
+            return res.status(404).json({
+                success: false,
+                message: "videoId not found"
+            })
         }
 
-        await deletefile(video.videoPublicId, "video")
+        const result = await deletefile(video.videoPublicId, "video")
+
+        if (!result || result.result !== "ok") {
+            throw new Error("Video deletion failed")
+        }
 
         await Video.findByIdAndDelete(req.params.id)
 

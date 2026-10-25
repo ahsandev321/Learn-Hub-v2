@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import './Footer.css'
-import { NavLink, useNavigate } from 'react-router-dom'
+import { NavLink, useLocation, useNavigate } from 'react-router-dom'
 
 function Footer() {
 
@@ -8,6 +8,8 @@ function Footer() {
     const [login, setLogin] = useState(localStorage.getItem("login"))
 
     const navigate = useNavigate()
+
+    const location = useLocation()
 
     //Update login status when the loginChanged event occurs.
     useEffect(() => {
@@ -27,6 +29,61 @@ function Footer() {
         }
 
     }, [])
+
+    const handleServicesClick = (e) => {
+        e.preventDefault()
+
+
+        //Navigate to the services section from another page.
+        if (location.pathname !== "/") {
+            navigate("/#services", { state: { scrollToServices: true } })
+
+        }
+        else {
+            navigate("/#services")
+
+            //Smoothly scroll to the services section on the home page.
+            document.getElementById("services")?.scrollIntoView({
+                behavior: "smooth"
+            })
+        }
+    }
+    const handleHomwClick = (e) => {
+        e.preventDefault()
+
+        //Navigation to the home section from another page.
+        if (location.pathname !== "/") {
+            navigate("/#home", { state: { scrollToHome: true } })
+
+        }
+        else {
+            navigate("/#home")
+            //Smoothly scroll to the home sectoion.
+            document.getElementById("home")?.scrollIntoView({
+                behavior: "smooth"
+            })
+        }
+    }
+
+    const handleContactUsClick = (e) => {
+        e.preventDefault()
+
+        //Navigate to the Contact US section from another page.
+        if (location.pathname !== "/") {
+            navigate("/#contactus", { state: { scrollToContactUs: true } })
+
+        }
+        else {
+            navigate("/#contactus")
+
+            //Smoothly scroll to the Contact Us section.
+            document.getElementById("contactus")?.scrollIntoView({
+                behavior: "smooth"
+            })
+        }
+    }
+
+
 
     //Clear user data and redirect to the login page.
     const logout = () => {
@@ -54,7 +111,7 @@ function Footer() {
                 {/*Website logo and home link. */}
                 <div className='footer-content-logo-card'>
 
-                    <NavLink to="/" className='footer-link'>
+                    <NavLink to="/" className='footer-link' onClick={handleHomwClick}>
                         <div className='footer-logo-section'>
                             <h1> <span className='footer-logo-text'>Learn</span>Hub</h1>
                         </div>
@@ -66,12 +123,23 @@ function Footer() {
                 <div className='footer-content-quick-links-card'>
                     <h1> Quick Links</h1>
 
-                    <NavLink to="/" className='footer-link'>
+                    <NavLink to="/" className='footer-link' onClick={handleHomwClick}>
 
                         <div className='footer-quick-links'><h1>Home</h1></div>
 
                     </NavLink>
 
+                    <NavLink to='/courses' className='footer-link' onClick={handleServicesClick}>
+
+                        <div className="footer-quick-links"><h1>Services</h1></div>
+
+                    </NavLink>
+
+                    <NavLink to='/courses' className='footer-link' onClick={handleContactUsClick}>
+
+                        <div className="footer-quick-links"><h1>Contact Us</h1></div>
+
+                    </NavLink>
                     <NavLink to='/courses' className='footer-link'>
 
                         <div className="footer-quick-links"><h1>Courses</h1></div>

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import './Navbar.css'
-import { NavLink, useNavigate } from 'react-router-dom'
+import { NavLink, useLocation, useNavigate } from 'react-router-dom'
 import { FaBars, FaTimes } from 'react-icons/fa'
 function Navbar() {
 
@@ -13,6 +13,8 @@ function Navbar() {
     const [role, setRole] = useState(localStorage.getItem("role"))
 
     const navigate = useNavigate()
+
+    const location = useLocation()
 
     //Update login status and role when login changes.
     useEffect(() => {
@@ -33,6 +35,60 @@ function Navbar() {
 
     }, [])
 
+    const handleServicesClick = (e) => {
+        e.preventDefault()
+
+        setMenue(false)
+
+        //Navigate to the services section from another page.
+        if (location.pathname !== "/") {
+            navigate("/#services", { state: { scrollToServices: true } })
+
+        }
+        else {
+            navigate("/#services")
+
+            //Smoothly scroll to the services section on the home page.
+            document.getElementById("services")?.scrollIntoView({
+                behavior: "smooth"
+            })
+        }
+    }
+    const handleHomwClick = (e) => {
+        e.preventDefault()
+
+        setMenue(false)
+        //Navigate to the home section from another page.
+        if (location.pathname !== "/") {
+            navigate("/#home", { state: { scrollToHome: true } })
+
+        }
+        else {
+            navigate("/#home")
+            //Smoothly scroll to the home section on the home page.
+            document.getElementById("home")?.scrollIntoView({
+                behavior: "smooth"
+            })
+        }
+    }
+    const handleContactUsClick = (e) => {
+        e.preventDefault()
+
+        setMenue(false)
+        //Navigate to the Contact US section from another page.
+        if (location.pathname !== "/") {
+            navigate("/#contactus", { state: { scrollToContactUs: true } })
+
+        }
+        else {
+            navigate("/#contactus")
+            //Smoothly scroll to the Constact Us section on the home page.
+            document.getElementById("contactus")?.scrollIntoView({
+                behavior: "smooth"
+            })
+        }
+    }
+
     //Clear user data and redirect to the login page.
     const logout = () => {
         localStorage.removeItem("login")
@@ -42,6 +98,7 @@ function Navbar() {
         localStorage.removeItem("courseId")
         localStorage.removeItem("myCourseId")
         localStorage.removeItem("selectedStudentId")
+        localStorage.removeItem("token")
 
         //Redirect the user to the login page.
         navigate('/login', { replace: true })
@@ -55,7 +112,7 @@ function Navbar() {
         <div className='nav-main-container'>
 
             {/*Website logo and home link. */}
-            <NavLink to="/" className='nav-link'>
+            <NavLink to="/" onClick={handleHomwClick} className='nav-link'>
                 <div className='nav-logo-section'>
                     <h1> <span className='nav-logo-text'>Learn</span>Hub</h1>
                 </div>
@@ -63,10 +120,21 @@ function Navbar() {
 
             {/*Main navigation links. */}
             <div className='nav-link-section'>
-                <NavLink to="/" className='nav-link'>
-                    {({ isActive }) => (
-                        <div className={isActive ? "nav-active-links" : "nav-links"}><h1>Home</h1></div>
-                    )}
+                <NavLink to="/" className='nav-link' onClick={handleHomwClick}>
+
+                    <div className={location.hash === "#home" ? "nav-active-links" : "nav-links"}><h1>Home</h1></div>
+
+                </NavLink>
+
+                <NavLink to='/' className='nav-link' onClick={handleServicesClick} >
+
+                    <div className={location.hash === "#services" ? "nav-active-links" : "nav-links"}><h1>Services</h1></div>
+
+                </NavLink>
+                <NavLink to='/' className='nav-link' onClick={handleContactUsClick} >
+
+                    <div className={location.hash === "#contactus" ? "nav-active-links" : "nav-links"}><h1>Contact Us</h1></div>
+
                 </NavLink>
 
                 <NavLink to='/courses' className='nav-link'>
@@ -74,6 +142,16 @@ function Navbar() {
                         <div className={isActive ? "nav-active-links" : "nav-links"}><h1>Courses</h1></div>
                     )}
                 </NavLink>
+
+                {/*Show admin only for logged-in asmin. */}
+                {login === "true" && role === "admin" && (
+                    <NavLink to='/adminDashboard' className='nav-link'>
+                        {({ isActive }) => (
+                            <div className={isActive ? "nav-active-links" : "nav-links"}><h1>Admin</h1></div>
+                        )}
+                    </NavLink>
+                )}
+
 
                 {/*Show my courses only for logged-in students.  */}
                 {login === "true" && role === "student" && (
@@ -116,10 +194,19 @@ function Navbar() {
                 {/*Show moblie navigation when the menue is open. */}
                 {menue && (<div className='nav-menue-link-section'>
                     <ul className='nave-menue-links'>
-                        <NavLink to="/" className='nav-link'><li className='nav-menue-link'> <h1>Home</h1></li></NavLink>
+                        <NavLink to="/" className='nav-link' onClick={handleHomwClick}><li className='nav-menue-link'> <h1>Home</h1></li></NavLink>
+                        <hr />
+                        <NavLink to="/" className='nav-link' onClick={handleServicesClick}><li className='nav-menue-link'> <h1>Services</h1></li></NavLink>
+                        <hr />
+                        <NavLink to="/" className='nav-link' onClick={handleContactUsClick}><li className='nav-menue-link'> <h1>Contact Us</h1></li></NavLink>
                         <hr />
                         <NavLink to="/courses" className='nav-link'><li className='nav-menue-link'> <h1>Courses</h1></li></NavLink>
                         <hr />
+
+                        {/*Show student dashboard link for students. */}
+                        {login === "true" && role === "admin" && (
+                            <NavLink to="/adminDashboard" className='nav-link'><li className='nav-menue-link'> <h1>Admin</h1></li></NavLink>
+                        )}
 
                         {/*Show student dashboard link for students. */}
                         {login === "true" && role === "student" && (

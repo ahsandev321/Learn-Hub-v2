@@ -76,18 +76,226 @@
 
 }
 
-/*Media queries for responsive design*/
-@media (max-width:1400px) {
+/*Main services section layout.*/
+.home-services-section-maincontainer {
+    width: 100%;
+    height: auto;
+    padding-left: 10%;
+    padding-top: 30px;
+    color: rgb(70, 69, 69);
+    font-size: 20px;
+}
 
-    .home-hero-text-section {
-        width: 50%;
-        height: auto;
-        font-size: 25px;
+/*Arrange services cards in a three-column grid.*/
+.home-services-cards-section {
+    width: 90%;
+    height: auto;
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
 
+/*Style the services cards.*/
+.home-services-cards {
+    width: 90%;
+    height: auto;
+    border: 2px solid rgb(176, 174, 174);
+    box-shadow: 0 0 20px rgb(237, 237, 237);
+    background-color: white;
+    border-radius: 15px;
+    cursor: pointer;
+    overflow: hidden;
+    font-size: 18px;
+    transition: 0.3s;
+}
 
-    }
+/*Add a hover effect to services cards.*/
+.home-services-cards:hover {
+    transform: translateY(-10px);
+    background-color: rgb(231, 230, 230);
 
 }
+
+/*Set the layout of services icons.*/
+.home-services-cards-icon-section {
+    width: 100%;
+    height: auto;
+    padding-left: 30px;
+    padding-top: 30px;
+
+
+}
+
+/*Styles the services icons.*/
+.home-services-cards-icon {
+    color: green;
+    font-size: 70px;
+}
+
+/*Style the services card headings.*/
+.home-services-cards-text-heading-section {
+    margin-top: 20px;
+    padding-left: 30px;
+    color: gray;
+
+}
+
+/*Styles the services cards descriptions.*/
+.home-services-cards-text-section {
+    padding: 30px;
+    color: gray;
+
+}
+
+/*Main contact section layout.*/
+.home-contact-maincontainer-section {
+    width: 100%;
+    height: auto;
+    padding-left: 10%;
+    padding-top: 30px;
+    color: rgb(70, 69, 69);
+    font-size: 20px;
+    margin-top: 50px;
+
+}
+
+/*Styles the contact form container.*/
+.home-contact-us-section {
+    width: 87%;
+    height: auto;
+    margin-top: 30px;
+    border-radius: 15px;
+    border: 2px solid rgb(176, 174, 174);
+    box-shadow: 0 0 20px rgb(237, 237, 237);
+    background-color: white;
+}
+
+/*Place the name and email fields side by side.*/
+.home-contact-us-input-field-container {
+    width: 100%;
+    height: auto;
+    display: flex;
+
+}
+
+/*Set the layout of each input fields section.*/
+.home-contact-us-input-field-section {
+    width: 50%;
+    height: auto;
+    padding: 20px;
+    color: gray;
+}
+
+/*Style the input fields and row their focus state.*/
+.home-contact-us-invalid-input-field,
+.home-contact-us-input-field {
+    width: 100%;
+    height: 37px;
+    margin-top: 15px;
+    font-size: 15px;
+    padding-left: 10px;
+    color: rgb(89, 89, 89);
+    outline: none;
+    border: 2px solid gray;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+/*Highlight an input field when the user selects it.*/
+.home-contact-us-input-field:focus {
+    border: 2px solid green;
+    box-shadow: 0 0 10px rgb(12, 197, 12);
+
+}
+
+/*show an error style for empty input fields.*/
+.home-contact-us-invalid-input-field {
+    border: 2px solid red;
+    box-shadow: 0 0 10px rgb(246, 87, 87);
+}
+
+/*Set the layout of the messages field.*/
+.home-contact-us-text-input-field-section {
+    width: 100%;
+    height: auto;
+    padding: 20px;
+    margin-top: 10px;
+    color: gray;
+}
+
+/*Style the messgae field.*/
+.home-contact-us-invalid-text-input-field,
+.home-contact-us-text-input-field {
+    width: 100%;
+    height: 100px;
+    font-size: 15px;
+    margin-top: 15px;
+    padding: 10px;
+    color: rgb(89, 89, 89);
+    outline: none;
+    border: 2px solid gray;
+    border-radius: 10px;
+    transition: 0.3s;
+
+}
+
+/*highlight the message fields when selected.*/
+.home-contact-us-text-input-field:focus {
+    border: 2px solid green;
+    box-shadow: 0 0 10px rgb(12, 197, 12);
+
+}
+
+/*Show an error style for the empty message field.*/
+.home-contact-us-invalid-text-input-field {
+    border: 2px solid red;
+    box-shadow: 0 0 10px rgb(246, 87, 87);
+
+}
+
+/*center the submit button.*/
+.home-contact-us-submit-button-section {
+    width: 100%;
+    height: 50px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/*Style the contact form submit button.*/
+.home-contact-us-submit-button {
+    width: 150px;
+    height: 35px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    font-size: 15px;
+    color: white;
+    background-color: rgb(2, 130, 2);
+    box-shadow: 2px 2px 15px rgb(160, 160, 160);
+    border: 2px solid rgb(1, 79, 1);
+    border-radius: 10px;
+    cursor: pointer;
+
+}
+
+/*Button hover and active states.*/
+.home-contact-us-submit-button:hover {
+    color: rgb(228, 227, 227);
+    background-color: rgb(2, 126, 2);
+
+}
+
+.home-contact-us-submit-button:active {
+    color: rgb(198, 197, 197);
+    background-color: rgb(2, 105, 2);
+
+}
+
+
+/*Media queries for responsive design*/
+
 
 @media (max-width:1400px) {
 
@@ -106,6 +314,18 @@
 
 
     }
+
+}
+
+@media (max-width:1200px) {
+
+    .home-services-cards {
+        width: 90%;
+        height: auto;
+        font-size: 15px;
+        transition: 0.3s;
+    }
+
 
 }
 
@@ -141,6 +361,22 @@
 
     }
 
+    .home-services-cards-section {
+        width: 100%;
+        height: auto;
+        margin-top: 30px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .home-services-cards {
+        width: 90%;
+        height: auto;
+        font-size: 15px;
+        transition: 0.3s;
+    }
+
+
 }
 
 @media (max-width:768px) {
@@ -161,6 +397,52 @@
 
 
     }
+
+    .home-services-section-maincontainer {
+        width: 100%;
+        height: auto;
+        color: rgb(70, 69, 69);
+        font-size: 15px;
+    }
+
+    .home-services-cards-section {
+        width: 100%;
+        height: auto;
+        margin-top: 30px;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .home-services-cards {
+        width: 90%;
+        height: auto;
+        font-size: 15px;
+        transition: 0.3s;
+
+    }
+
+    .home-contact-maincontainer-section {
+        width: 100%;
+        height: auto;
+        font-size: 15px;
+        margin-top: 50px;
+
+    }
+
+    .home-contact-us-input-field-container {
+        width: 100%;
+        height: auto;
+        flex-direction: column;
+
+    }
+
+    .home-contact-us-input-field-section {
+        width: 100%;
+        height: auto;
+        padding: 20px;
+        color: gray;
+    }
+
 
 }
 
@@ -218,5 +500,13 @@
 
 
     }
+
+    .home-services-cards {
+        width: 90%;
+        height: auto;
+        font-size: 12px;
+        transition: 0.3s;
+    }
+
 
 }

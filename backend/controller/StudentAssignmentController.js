@@ -168,7 +168,12 @@ const deleteAssignment = async (req, res) => {
         //Delete submission records and their uploaded files.
         for (let i = 0; i < coursesAssignments.length; i++) {
 
-            await StudentAssignmet.findByIdAndDelete(coursesAssignments[i]._id)
+         const result =  await StudentAssignmet.findByIdAndDelete(coursesAssignments[i]._id)
+
+           if (!result || result.result !== "ok") {
+            throw new Error("Student assignment deletion failed")
+        }
+
 
             await deletefile(coursesAssignments[i].filePublicId, "raw")
 

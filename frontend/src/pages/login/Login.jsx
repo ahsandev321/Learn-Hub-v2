@@ -66,6 +66,12 @@ function Login() {
 
      const role = localStorage.getItem("role")
 
+      if(role === "admin"){
+
+       navigate("/adminDashboard", { replace: true })
+
+     }
+
      if(role === "student"){
 
        navigate("/studentDashboard", { replace: true })

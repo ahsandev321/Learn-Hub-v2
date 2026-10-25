@@ -1,8 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react'
 import { BsThreeDotsVertical } from 'react-icons/bs'
 import { NavLink } from 'react-router-dom'
+import './TeacherCourseCard.css'
 
-function AddCoursesComponent({ data, editData, dataId, deleteData }) {
+
+function TeacherCourseCard({ data, editData, dataId, deleteData }) {
 
     //Control the visibility of the course description.
     const [discription, setDiscription] = useState(false)
@@ -111,9 +113,7 @@ function AddCoursesComponent({ data, editData, dataId, deleteData }) {
 
 
         </div>
-
-
     )
 }
 
-export default AddCoursesComponent
+export default TeacherCourseCard

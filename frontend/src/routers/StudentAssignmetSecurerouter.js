@@ -4,10 +4,19 @@ import { Navigate } from 'react-router-dom'
 
 function StudentAssignmetSecurerouter({ children, allowedRole }) {
 
-    //Get the login status and user role.
+    //Get users login status token and user role.
+    const token = localStorage.getItem("token")
+
     const login = localStorage.getItem("login")
 
     const role = localStorage.getItem("role")
+
+    //redirect users who do not have a tocken.
+    if (!token) {
+        return (
+            <Navigate to='/login' replace />
+        )
+    }
 
     //Redirect users who are not logged in.
     if (login !== "true") {

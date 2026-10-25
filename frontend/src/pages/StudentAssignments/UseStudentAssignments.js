@@ -21,10 +21,11 @@ function UseStudentAssignments() {
                 setLoading(true)
                 setError(false)
 
+                const token = localStorage.getItem("token")
 
                 const studentId = localStorage.getItem("selectedStudentId")
 
-                const res = await axios.get(`http://localhost:3000/submit-assignment?studentId=${studentId}`)
+                const res = await axios.get(`http://localhost:3000/submit-assignment?studentId=${studentId}`, { headers: { Authorization: `Bearer ${token}` } })
 
                 setAssignments(res.data.assignments)
 

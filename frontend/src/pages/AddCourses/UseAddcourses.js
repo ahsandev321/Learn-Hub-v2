@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 
-function UseAddcourses({ courseData, editindux, setEditindux, deleteindux, setDeleteindux, courseEditData }) {
+function UseAddcourses({ courseData, editindux, setEditindux, deleteindux, setDeleteindux, courseEditData, setCourseEditData }) {
 
 
     //Manage loading and error states.
@@ -22,8 +22,9 @@ function UseAddcourses({ courseData, editindux, setEditindux, deleteindux, setDe
 
                 setError(false)
 
+                const token = localStorage.getItem("token")
                 const userId = localStorage.getItem("userId")
-                const res = await axios.get(`http://localhost:3000/courses?userId=${userId}`)
+                const res = await axios.get(`http://localhost:3000/my-courses?userId=${userId}`, { headers: { Authorization: `Bearer ${token}` } })
 
                 setMycoures(res.data)
 
@@ -57,10 +58,12 @@ function UseAddcourses({ courseData, editindux, setEditindux, deleteindux, setDe
                 //Reset any previous error.
                 setError(false)
 
-                await axios.post("http://localhost:3000/courses", courseData)
+                const token = localStorage.getItem("token")
+
+                await axios.post("http://localhost:3000/courses", courseData, { headers: { Authorization: `Bearer ${token}` } })
 
                 const userId = localStorage.getItem("userId")
-                const res = await axios.get(`http://localhost:3000/courses?userId=${userId}`)
+                const res = await axios.get(`http://localhost:3000/my-courses?userId=${userId}`, { headers: { Authorization: `Bearer ${token}` } })
 
                 setMycoures(res.data)
 
@@ -96,12 +99,16 @@ function UseAddcourses({ courseData, editindux, setEditindux, deleteindux, setDe
                 //Reset any previous error.
                 setError(false)
 
-                await axios.put(`http://localhost:3000/courses/${editindux}`, courseEditData)
+                const token = localStorage.getItem("token")
+
+                await axios.put(`http://localhost:3000/courses/${editindux}`, courseEditData, { headers: { Authorization: `Bearer ${token}` } })
 
                 setEditindux(null)
 
+                setCourseEditData(null)
+
                 const userId = localStorage.getItem("userId")
-                const res = await axios.get(`http://localhost:3000/courses?userId=${userId}`)
+                const res = await axios.get(`http://localhost:3000/my-courses?userId=${userId}`, { headers: { Authorization: `Bearer ${token}` } })
 
                 setMycoures(res.data)
 
@@ -138,12 +145,14 @@ function UseAddcourses({ courseData, editindux, setEditindux, deleteindux, setDe
                 //Reset any previous error.
                 setError(false)
 
-                await axios.delete(`http://localhost:3000/courses/${deleteindux}`)
+                const token = localStorage.getItem("token")
+
+                await axios.delete(`http://localhost:3000/courses/${deleteindux}`, { headers: { Authorization: `Bearer ${token}` } })
 
                 setDeleteindux(null)
 
                 const userId = localStorage.getItem("userId")
-                const res = await axios.get(`http://localhost:3000/courses?userId=${userId}`)
+                const res = await axios.get(`http://localhost:3000/my-courses?userId=${userId}`, { headers: { Authorization: `Bearer ${token}` } })
 
                 setMycoures(res.data)
 

@@ -38,6 +38,44 @@
 
 }
 
+.studentDashboard-setting-section {
+    width: 90%;
+    height: 50px;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.studentDashboard-setting-button-section {
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.studentDashboard-setting-button {
+    width: auto;
+    height: auto;
+    border: none;
+    cursor: pointer;
+    background-color: white;
+}
+.studentDashboard-setting-button-icon{
+     font-size: 30px;
+    color: gray;
+}
+.studentDashboard-setting-button-icon:hover{
+    font-size: 30px;
+    color: gray;
+    rotate: 100deg;
+    transform: 0.3s;
+}
+
+
 /*Create the course cards.*/
 .studentDashboard-maincontainer-section {
     width: 100%;
@@ -101,6 +139,13 @@
         height: auto;
         font-size: 15px;
         padding-left: 15%;
+
+    }
+
+    .studentDashboard-setting-section {
+        width: 90%;
+        height: 50px;
+        font-size: 12px;
 
     }
 

@@ -1,0 +1,472 @@
+/*Reset default spacing.*/
+* {
+    padding: 0%;
+    margin: 0%;
+}
+
+/*Main setting page.*/
+.settings-maincontainer {
+    width: 100%;
+    height: auto;
+}
+
+/*Settings heading section.*/
+.settings-mincontainer-section {
+    width: 100%;
+    height: auto;
+    padding-top: 130px;
+    color: gray;
+    font-size: 20px;
+    padding-left: 12%;
+}
+
+/*Profile form section.*/
+.setting-profile-form-section {
+    width: 100%;
+    height: auto;
+}
+
+/*Profile information section.*/
+.setting-profile-section {
+    width: 90%;
+    height: auto;
+    margin-top: 50px;
+    border: 2px solid gray;
+    margin-bottom: 25px;
+    padding: 15px;
+    overflow: break-word;
+    word-break: break-word;
+
+}
+
+/*Prifile heading and teaxt.*/
+.setting-profile-heading {
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
+    color: green;
+}
+
+.setting-profile-text {
+    width: 100%;
+    height: auto;
+    margin-top: 10px;
+    color: gray;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+/*Edit button styles.*/
+.setting-profile-edit-button {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    border-radius: 100%;
+    border: none;
+
+
+}
+
+.setting-profile-edit-button:hover {
+    width: 30px;
+    height: 30px;
+    background-color: rgb(219, 217, 217);
+
+}
+
+.setting-profile-edit-button:active {
+    width: 30px;
+    height: 30px;
+    background-color: rgb(183, 181, 181);
+
+}
+
+.setting-profile-edit-icon {
+    font-size: 20px;
+    color: gray;
+}
+
+/*Profile Edit section*/
+.setting-profile-text-edit-section {
+    width: 100%;
+    height: auto;
+    margin-top: 10px;
+    color: gray;
+    display: flex;
+    justify-content: space-between;
+
+
+}
+
+/*Profile input field styles.*/
+.setting-profile-invalid-input-field,
+.setting-profile-input-field {
+    width: 80%;
+    height: 30px;
+    padding-left: 10px;
+    font-size: 20px;
+    color: gray;
+    outline: none;
+    border: 2px solid gray;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+/*Highlights the selected input.*/
+.setting-profile-input-field:focus {
+    color: gray;
+    border: none;
+    border: 2px solid green;
+    box-shadow: 0 0 5px rgb(2, 217, 2);
+}
+
+/*Show profile input errors.*/
+.setting-profile-invalid-input-field {
+    border: 2px solid red;
+    box-shadow: 0 0 5px rgb(229, 129, 129);
+    padding-left: 10px;
+}
+
+/*Update and cancel buttons layout.*/
+.setting-profile-button-section {
+    width: 20%;
+    height: auto;
+    display: flex;
+    justify-content: space-around;
+}
+
+/*Update button styles.*/
+.setting-profile-update-button {
+    width: 75px;
+    height: 30px;
+    cursor: pointer;
+    border-radius: 10px;
+    border: 2px solid rgb(1, 79, 1);
+    background-color: rgb(2, 130, 2);
+    font: 12px;
+    outline: none;
+    color: white;
+}
+
+.setting-profile-update-button:hover {
+    color: rgb(230, 229, 229);
+    border: 2px solid rgb(1, 79, 1);
+    background-color: rgb(2, 126, 2);
+
+}
+
+.setting-profile-update-button:active {
+    color: rgb(174, 172, 172);
+    border: 2px solid rgb(1, 79, 1);
+    background-color: rgb(2, 105, 2);
+}
+
+/*Cancel button styles.*/
+.setting-profile-cancel-button {
+    width: 75px;
+    height: 30px;
+    cursor: pointer;
+    border-radius: 10px;
+    border: 2px solid rgb(90, 89, 89);
+    background-color: gray;
+    font: 12px;
+    outline: none;
+    color: white;
+
+}
+
+.setting-profile-cancel-button:hover {
+    width: 75px;
+    height: 30px;
+    cursor: pointer;
+    background-color: rgb(117, 117, 117);
+    color: rgb(230, 229, 229);
+
+}
+
+.setting-profile-cancel-button:active {
+    color: rgb(174, 172, 172);
+    background-color: rgb(95, 95, 95);
+
+}
+
+/*Change password section.*/
+.setting-password-maincontainer {
+    width: 100%;
+    height: auto;
+    margin-top: 50px;
+    font-size: 20px;
+    padding-left: 12%;
+    color: gray;
+}
+
+/*Password input container,*/
+.setting-password-input-field-maincontainer {
+    width: 100%;
+    height: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+/*Position the password visibility button.*/
+.setting-password-input-field-section {
+    position: relative;
+    width: 90%;
+    height: 50px;
+    margin-top: 10px;
+
+}
+
+/*Password input styles.*/
+.setting-invalid-password-input-field,
+.setting-password-input-field {
+    width: 100%;
+    height: 50px;
+    border-radius: 15px;
+    font-size: 20px;
+    padding-left: 10px;
+    color: rgb(95, 93, 93);
+    border: 2px solid gray;
+    outline: none;
+    transition: 0.3s;
+}
+
+/*Highlight the active password field.*/
+.setting-password-input-field:focus {
+    border: none;
+    border: 2px solid green;
+    box-shadow: 0 0 5px rgb(2, 217, 2);
+
+}
+
+/*Show password validation errors*/
+.setting-invalid-password-input-field {
+    border: 2px solid red;
+    box-shadow: 0 0 5px rgb(229, 129, 129);
+    padding-left: 10px;
+
+}
+
+/*Hide the password buttons when needed.*/
+.setting-hide-password-button {
+    display: none;
+
+}
+
+/*Show password button styles.*/
+.setting-show-password-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 50px;
+    height: 25px;
+    color: white;
+    background-color: gray;
+    border-radius: 5px;
+    border: 2px solid gray;
+    outline: none;
+}
+
+/*Password wrroe message.*/
+.setting-password-invalid-massage {
+    width: auto;
+    height: auto;
+    font-size: 12px;
+    margin-top: 10px;
+    padding-left: 10px;
+    color: red;
+}
+
+/*Align the change password button.*/
+.setting-change-password-button-section {
+    width: 90%;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+/*Change password button styles.*/
+.setting-change-password-button {
+    width: 150px;
+    height: 38px;
+    cursor: pointer;
+    border-radius: 10px;
+    border: 2px solid rgb(1, 79, 1);
+    background-color: rgb(2, 130, 2);
+    font: 12px;
+    box-shadow: 0 0 20px rgb(148, 147, 147);
+    outline: none;
+    color: white;
+}
+
+.setting-change-password-button:hover {
+    color: rgb(230, 229, 229);
+    border: 2px solid rgb(1, 79, 1);
+    background-color: rgb(2, 126, 2);
+
+}
+
+.setting-change-password-button:active {
+    color: rgb(174, 172, 172);
+    border: 2px solid rgb(1, 79, 1);
+    background-color: rgb(2, 105, 2);
+}
+
+
+/*Media queries for responsive design*/
+@media (max-width:1200px) {
+
+    .setting-profile-invalid-input-field,
+    .setting-profile-input-field {
+        width: 75%;
+        height: 30px;
+        padding-left: 10px;
+        font-size: 20px;
+
+    }
+
+    .setting-profile-button-section {
+        width: 25%;
+        height: auto;
+
+    }
+
+}
+
+@media (max-width:1024px) {
+
+    .setting-profile-invalid-input-field,
+    .setting-profile-input-field {
+        width: 70%;
+        height: 30px;
+        padding-left: 10px;
+        font-size: 20px;
+
+    }
+
+    .setting-profile-button-section {
+        width: 30%;
+        height: auto;
+
+    }
+
+}
+
+
+@media (max-width:768px) {
+    .settings-mincontainer-section {
+        width: 100%;
+        height: auto;
+        padding-top: 130px;
+        color: gray;
+        font-size: 15px;
+        padding-left: 12%;
+    }
+
+    .setting-profile-edit-button {
+        width: 25px;
+        height: 25px;
+        cursor: pointer;
+        border-radius: 100%;
+        border: none;
+
+
+    }
+
+    .setting-profile-edit-icon {
+        font-size: 15px;
+        color: gray;
+    }
+
+    .setting-profile-invalid-input-field,
+    .setting-profile-input-field {
+        width: 60%;
+        height: 30px;
+        padding-left: 10px;
+        font-size: 15px;
+
+    }
+
+    .setting-profile-button-section {
+        width: 40%;
+        height: auto;
+
+    }
+
+    .setting-password-maincontainer {
+        width: 100%;
+        height: auto;
+        margin-top: 50px;
+        font-size: 15px;
+        padding-left: 12%;
+    }
+
+    .setting-invalid-password-input-field,
+    .setting-password-input-field {
+        width: 100%;
+        height: 50px;
+        border-radius: 15px;
+        font-size: 15px;
+
+    }
+
+
+}
+
+@media (max-width:610px) {
+    .settings-mincontainer-section {
+        width: 100%;
+        height: auto;
+        padding-top: 130px;
+        color: gray;
+        font-size: 12px;
+        padding-left: 12%;
+    }
+
+    .setting-profile-text-edit-section {
+        width: 100%;
+        height: auto;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: end;
+
+    }
+
+    .setting-profile-invalid-input-field,
+    .setting-profile-input-field {
+        width: 100%;
+        height: 30px;
+        padding-left: 10px;
+        font-size: 15px;
+
+    }
+
+    .setting-profile-button-section {
+        width: 50%;
+        height: auto;
+        margin-top: 10px;
+
+
+    }
+}
+
+@media (max-width:480px) {
+    .setting-profile-button-section {
+        width: 100%;
+        height: auto;
+        margin-top: 10px;
+
+
+    }
+
+    .setting-change-password-button-section {
+        width: 90%;
+        height: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+}

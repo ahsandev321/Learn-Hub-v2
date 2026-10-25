@@ -15,7 +15,10 @@ import StudentCourses from '../pages/StudentDashboard/StudentCourses'
 import StudentCoursesSecurerouter from './StudentCoursesSecurerouter'
 import StudentAssignmetSecurerouter from './StudentAssignmetSecurerouter'
 import StudentAssignments from '../pages/StudentAssignments/StudentAssignments'
-
+import AdminDashboard from '../pages/AdminDashboard/AdminDashboard'
+import AdminCourses from '../pages/AdminCourses/AdminCourses'
+import Settings from '../pages/Settings/Settings'
+import SecureSettings from './SecureSettings'
 
 function Router() {
 
@@ -27,6 +30,29 @@ function Router() {
         <Route path='/login' element={<Login />} />
         <Route path='/signUp' element={<Signup />} />
         <Route path='/courses' element={<Allcourses />} />
+        
+        
+        {/*Allow only admin to access the admin dashboard. */}
+        <Route path='/settings' element={
+          <SecureSettings >
+            <Settings />
+          </SecureSettings>
+        } />
+
+
+        {/*Allow only admin to access the admin dashboard. */}
+        <Route path='/adminDashboard' element={
+          <Securerouter allowedRole="admin">
+            <AdminDashboard />
+          </Securerouter>
+        } />
+
+         {/*Allow only admin to access the admin courses. */}
+        <Route path='/adminCourses' element={
+          <Securerouter allowedRole="admin">
+            <AdminCourses />
+          </Securerouter>
+        } />
 
         {/*Allow only student to access the student dashboard. */}
         <Route path='/studentDashboard' element={

@@ -1,0 +1,259 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+/*Course card container and thumbnail.*/
+.admin-courses-card-maincontainer {
+    width: 290px;
+    height: auto;
+    overflow: hidden;
+    padding-right: 10px;
+    margin-top: 20px;
+    box-shadow: 7px 7px 20px rgb(199, 198, 198);
+    padding-bottom: 30px;
+    border: 2px solid gray;
+}
+
+.admin-courses-card-imag-section {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.admin-courses-card-imag {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+/*Course card branding and options menue.*/
+.admin-courses-card-logo-section {
+    position: relative;
+    width: 100%;
+    height: auto;
+    margin-top: 10px;
+    font-size: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 15px;
+    color: rgb(70, 69, 69);
+}
+
+.admin-courses-logo-text {
+    width: auto;
+    height: auto;
+    color: green;
+}
+
+.admin-courses-card-more-option-button {
+    width: 30px;
+    height: 30px;
+    background-color: rgb(224, 224, 224);
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: gray;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: 10px;
+}
+
+.admin-courses-card-more-option-button:hover {
+
+    background-color: rgb(201, 199, 199);
+    color: gray;
+    border-radius: 100%;
+}
+
+.admin-courses-card-more-option-button:active {
+
+    background-color: rgb(181, 179, 179);
+    color: gray;
+    border-radius: 100%;
+}
+
+/*Position the edit and delete option menue.*/
+.admin-courses-card-more-option-section {
+    position: absolute;
+    top: 37px;
+    right: 20px;
+    width: 100px;
+    height: auto;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 2px 2px 15px rgb(160, 160, 160);
+    z-index: 50;
+    background-color: rgb(240, 240, 240);
+    transition: 0.3s;
+}
+
+.admin-courses-card-option-button-section {
+    width: 100%;
+    height: auto;
+
+}
+
+/*Style the course options buttons.*/
+.admin-courses-card-option-button {
+    width: 100%;
+    height: 40px;
+    font-size: 17px;
+    color: white;
+    background-color: rgb(150, 149, 149);
+    border: none;
+}
+
+.admin-courses-card-option-button:hover {
+    width: 100%;
+    height: 40px;
+    font-size: 17px;
+    color: rgb(243, 241, 241);
+    background-color: rgb(132, 131, 131);
+    border: none;
+}
+
+.admin-courses-card-option-button:active {
+    width: 100%;
+    height: 40px;
+    font-size: 17px;
+    color: rgb(223, 222, 222);
+    background-color: rgb(111, 111, 111);
+    border: none;
+}
+
+/*Course title and description.*/
+.admin-courses-card-text-heading-section {
+    width: 100%;
+    height: 25px;
+    max-height: 200px;
+    margin-top: 20px;
+    padding-left: 25px;
+    font-size: 15px;
+    text-align: start;
+    color: green;
+    overflow: hidden;
+}
+
+.admin-courses-card-detail-section {
+    width: 100%;
+    height: auto;
+}
+
+/*Show a shortened or expanded course description.*/
+.admin-courses-card-text-less-content-section {
+    width: 100%;
+    height: 50px;
+    margin-top: 15px;
+    padding-left: 25px;
+    font-size: 20px;
+    text-align: start;
+    color: gray;
+    overflow: break-word;
+    word-break: break-word;
+    overflow: hidden;
+}
+
+.admin-courses-card-text-more-content-section {
+    width: 100%;
+    height: auto;
+    margin-top: 15px;
+    padding-left: 25px;
+    font-size: 20px;
+    text-align: start;
+    color: gray;
+    overflow: break-word;
+    word-break: break-word;
+
+}
+
+/*Show more or less description text.*/
+.admin-courses-card-show-more-text-button {
+
+    outline: none;
+    border: none;
+    background-color: white;
+    font-size: 15px;
+    color: gray;
+    margin-left: 82%;
+
+
+}
+
+.admin-courses-card-show-more-text-button:hover {
+    background-color: white;
+    color: green;
+    cursor: pointer;
+}
+
+/*Display course category and price.*/
+.admin-courses-card-text-section {
+    width: 100%;
+    height: 25px;
+    margin-top: 20px;
+    padding-left: 25px;
+    font-size: 17px;
+    text-align: start;
+    color: gray;
+    overflow: hidden;
+
+}
+
+/*Course card navigation button.*/
+.admin-courses-card-button-section {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.admin-courses-card-link {
+    width: 100%;
+    height: auto;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+}
+
+.admin-courses-card-button {
+    width: 80%;
+    height: 35px;
+    font-size: 20px;
+    color: white;
+    background-color: rgb(2, 130, 2);
+    border: 2px solid gray;
+    cursor: pointer;
+    outline: none;
+}
+
+.admin-courses-card-button:hover {
+    color: rgb(243, 240, 240);
+    background-color: rgb(2, 111, 2);
+
+}
+
+.admin-courses-card-button:active {
+    color: rgb(224, 221, 221);
+    background-color: rgb(1, 104, 1);
+}
+@media (max-width:768px) {
+
+
+    .admin-courses-card-maincontainer {
+        width: 270px;
+        height: auto;
+        margin: auto;
+
+
+    }
+}
+

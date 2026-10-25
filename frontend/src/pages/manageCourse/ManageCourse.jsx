@@ -5,6 +5,8 @@ import UseManageCourse from './UseManageCourse'
 import UseManageAssignment from './UseManageAssignment'
 import ManageCourseComponent from './ManageCourseComponent'
 import { FaBars, FaTimes } from 'react-icons/fa'
+import { useNavigate } from 'react-router-dom'
+import { io } from 'socket.io-client'
 
 
 function ManageCourse() {
@@ -46,6 +48,29 @@ function ManageCourse() {
   const { assignmentLoading, assignmentError, assignmentdata } = UseManageAssignment({ courseAssignment, deleteindux, setDeleteindux, editAssignment, editAssignmentindux, setEditAssignmentindux })
 
   const scrollRef = useRef(null)
+
+  const navigate = useNavigate()
+
+  useEffect(() => {
+
+    const socket = io("http://localhost:3000")
+
+    const courseId = localStorage.getItem("courseId")
+
+    socket.emit("joinCourseRoom", courseId)
+
+    socket.on("courseDeleted", () => {
+
+       navigate("/addcourses", { replace: true })
+
+    })
+
+    return () => {
+      socket.disconnect()
+    }
+
+
+  }, [])
 
   //Combine and sort videos and assignments by date.
   const allContent = [
@@ -155,7 +180,7 @@ function ManageCourse() {
 
     const courseId = localStorage.getItem("courseId")
 
-    const instructorId = localStorage.getItem("userID")
+    const instructorId = localStorage.getItem("userId")
 
     const formData = new FormData()
 
@@ -331,7 +356,7 @@ function ManageCourse() {
 
                     <div className='manage-course-data-assignment'>
                       {/*Open the assignment file. */}
-                      <a href={selectContent.data.fileUrl} className='manage-course-data-assignment-link'>open assignmet</a>
+                      <a href={selectContent.data.fileUrl} className='manage-course-data-assignment-link'>open assignment</a>
                     </div>
 
                   </div>
