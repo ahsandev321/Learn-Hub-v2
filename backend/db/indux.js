@@ -1,9 +1,8 @@
 const mongoose = require("mongoose");
 
 //Connect to the MongoDB database.
-const dbConnection = () => {
+const dbConnection = async() => {
 
-    (async () => {
 
         try {
 
@@ -19,8 +18,10 @@ const dbConnection = () => {
             console.log("Database connection error")
             console.log(error)
 
+            throw error
+
         }
-    })()
+
 }
 
 
