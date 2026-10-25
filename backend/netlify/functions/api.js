@@ -33,6 +33,12 @@ const frontendURL = "https://learn-hub-project-v2.netlify.app"
 const app = express()
 
 
+app.use(cors({
+    origin : frontendURL
+}))
+
+app.use(express.json())
+
 app.use(async (req, res, next) => {
     try {
 
@@ -51,13 +57,6 @@ app.use(async (req, res, next) => {
         
     }
 })
-
-
-app.use(cors({
-    origin : frontendURL
-}))
-
-app.use(express.json())
 
 //Register application routers.
 app.use('/', signuprouter );
