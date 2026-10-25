@@ -32,6 +32,15 @@ const frontendURL = "https://learn-hub-project-v2.netlify.app"
 
 const app = express()
 
+app.use((req, res, next) => {
+    const prefix = "/api";
+
+    if (req.url.startsWith(prefix)) {
+        req.url = req.url.slice(prefix.length) || "/";
+    }
+
+    next();
+});
 
 app.use(cors({
     origin : frontendURL
