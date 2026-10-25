@@ -46,7 +46,6 @@ const settingrouter =require("./routers/SettingRouter")
 
 const contactUSRouter =require("./routers/ContactUsrouter")
 
-const frontendURL = "https://learn-hub-project-v2.netlify.app"
 
 //Create HTTP server for express.
 const server = http.createServer(app)
@@ -54,7 +53,7 @@ const server = http.createServer(app)
 //initialize Socket.IO with CORS settings.
 const io = new Server(server, {
     cors: {
-        origin: frontendURL
+        origin: '*'
     }
 })
 
@@ -65,7 +64,7 @@ app.use(express.json())
 //Connect to the database.
 dbConnection()
 
-app.use(cors({ origin: frontendURL}))
+app.use(cors())
 
 //Register application routers.
 app.use('/', signuprouter );
@@ -101,23 +100,8 @@ io.on("connection", (socket)=>{
 
 })
 
-const PORT = process.env.PORT || 5000
 
 //Start the server on the configured port.
-const startServer = async () => {
-    try {
-
-        //Connect to the database.
-        await dbConnection()
-
-        server.listen(PORT, "0.0.0.0", () => {
-            console.log("server start")
-        })
-    }catch(error){
-        console.log("Failed to start server :", error)
-
-        throw error
-    }
-}
-
- startServer()
+server.listen(process.env.PORT,()=>{
+    console.log("server start")
+}) 

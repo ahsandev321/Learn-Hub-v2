@@ -1,8 +1,9 @@
 const mongoose = require("mongoose");
 
 //Connect to the MongoDB database.
-const dbConnection = async() => {
+const dbConnection = () => {
 
+    (async () => {
 
         try {
 
@@ -19,6 +20,8 @@ const dbConnection = async() => {
             console.log(error)
 
         }
+    })()
+}
 
-    }
+
 module.exports = dbConnection;

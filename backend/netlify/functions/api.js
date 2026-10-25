@@ -32,15 +32,6 @@ const frontendURL = "https://learn-hub-project-v2.netlify.app"
 
 const app = express()
 
-app.use((req, res, next) => {
-    const prefix = "/api";
-
-    if (req.url.startsWith(prefix)) {
-        req.url = req.url.slice(prefix.length) || "/";
-    }
-
-    next();
-});
 
 app.use(cors({
     origin : frontendURL
@@ -68,25 +59,25 @@ app.use(async (req, res, next) => {
 })
 
 //Register application routers.
-app.use('/', signuprouter );
+app.use('/api', signuprouter );
 
-app.use('/', courserouter);
+app.use('/api', courserouter);
 
-app.use('/', videorouter);
+app.use('/api', videorouter);
 
-app.use('/', assignmentRouter);
+app.use('/api', assignmentRouter);
 
-app.use('/', enrollmentRouter)
+app.use('/api', enrollmentRouter)
 
-app.use('/', studentAssignmentRouter);
+app.use('/api', studentAssignmentRouter);
 
-app.use('/', contentViewRouter)
+app.use('/api', contentViewRouter)
 
-app.use('/', adminRouter)
+app.use('/api', adminRouter)
 
-app.use('/', settingrouter)
+app.use('/api', settingrouter)
 
-app.use('/', contactUSRouter)
+app.use('/api', contactUSRouter)
 
 
 
