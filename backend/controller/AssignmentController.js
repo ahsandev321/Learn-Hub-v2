@@ -7,7 +7,7 @@ const uploadAssignment = async (req, res) => {
 
     try {
 
-        const assignmentFile = await uploadfiles(req.file.path)
+        const assignmentFile = await uploadfiles(req.file.buffer)
 
         if (!assignmentFile) {
             console.log("Assignment upload failed")
@@ -49,7 +49,7 @@ const updateAssignment = async (req, res) => {
         if (req.file) {
 
             //Upload the new file and remove the old one. 
-            const editAssignment = await uploadfiles(req.file.path)
+            const editAssignment = await uploadfiles(req.file.buffer)
 
             const result = await deletefile(assignment.filePublicId, "raw")
 

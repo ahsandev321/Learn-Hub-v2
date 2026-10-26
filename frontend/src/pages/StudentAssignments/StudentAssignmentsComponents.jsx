@@ -8,7 +8,7 @@ function StudentAssignmentsComponents({ data }) {
                         {/*Assignment title. */}
                         <div className='Student-Assignments-assignments-titles-heading-section'>
                                 <h1 className='Student-Assignments-assignments-titles-heading'> Assignment :  </h1>
-                                <h1 Student-Assignments-assignments-titles>  {data.assignment?.title}</h1>
+                                <h1 className='Student-Assignments-assignments-titles'>  {data.assignment?.title}</h1>
                         </div>
 
                         {/*Assignment title. */}

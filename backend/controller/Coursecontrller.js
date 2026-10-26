@@ -64,7 +64,7 @@ const updateCourses = async (req, res) => {
       if (req.file) {
 
          //Upload the new thumbnail and delete the old one.
-         const updateimage = await uploadfiles(req.file.path)
+         const updateimage = await uploadfiles(req.file.buffer)
 
          const result = await deletefile(courses.thumbnailPublicId, "image")
 

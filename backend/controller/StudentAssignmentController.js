@@ -34,7 +34,7 @@ const submitAssignment = async (req, res) => {
             })
         }
 
-        const assignmentFile = await uploadfiles(req.file.path)
+        const assignmentFile = await uploadfiles(req.file.buffer)
 
         //Save the submitted assignment details.
         const assignment = await StudentAssignmet.create({
@@ -170,7 +170,7 @@ const deleteAssignment = async (req, res) => {
 
          const result =  await StudentAssignmet.findByIdAndDelete(coursesAssignments[i]._id)
 
-           if (!result || result.result !== "ok") {
+           if (!result) {
             throw new Error("Student assignment deletion failed")
         }
 

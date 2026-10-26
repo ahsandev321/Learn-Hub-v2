@@ -15,7 +15,7 @@ const uploadVideo = async (req, res) => {
         }
 
         //Upload the video to cloudinary.
-        const courseVideo = await uploadvideofiles(req.file.path)
+        const courseVideo = await uploadvideofiles(req.file.buffer)
 
         if (!courseVideo) {
             return (
@@ -60,7 +60,7 @@ const updateVideo = async (req, res) => {
         //Upload the new video and remove the old file.
         if (req.file) {
 
-            const editVideo = await uploadvideofiles(req.file.path)
+            const editVideo = await uploadvideofiles(req.file.buffer)
 
             const result = await deletefile(video.videoPublicId, "video")
 

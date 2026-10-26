@@ -84,7 +84,7 @@ function UseAdminDashboard({ messageindux, instructorId, studentindux, teacherCo
 
                 setStatus(res.data.details)
 
-                const allstudent = await axios.get(`h${process.env.REACT_APP_API_URL}/admin-get-users`, { headers: { Authorization: `Bearer ${token}` } })
+                const allstudent = await axios.get(`${process.env.REACT_APP_API_URL}/admin-get-users`, { headers: { Authorization: `Bearer ${token}` } })
 
                 setStudents(allstudent.data.allstudent)
 

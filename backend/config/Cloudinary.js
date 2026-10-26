@@ -54,6 +54,7 @@ const uploadvideofiles = async (buffer) => {
             const stream = cloudonary.uploader.upload_stream({
                 resource_type: "video",
                 folder: "learnHub/courses",
+                timeout: 300000
             }, (error, result) => {
                 if (error) return reject(error)
                 resolve(result)
