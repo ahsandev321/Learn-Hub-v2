@@ -1,6 +1,5 @@
 const cloudonary = require("cloudinary").v2
-
-const {Readable} = require('stream')
+const fs = require("fs")
 
 
 // Configure cloudinary using environment variables.
@@ -12,34 +11,24 @@ cloudonary.config({
 
 
 //Upload a file to cloudinary and remove the local file after processing.
-const uploadfiles = async (buffer) => {
+const uploadfiles = async (localfilepath) => {
 
     try {
 
-        if (!buffer) return;
-
-        return await new Promise((resolve, reject) => {
-
-            const stream = cloudonary.uploader.upload_stream({
-                resource_type: "auto",
-                folder: "learnHub/courses"
-            }, (error, result) => {
-                if (error) return reject(error)
-                resolve(result)
-
-            })
-
-            const readable = Readable.from([buffer]);
-
-readable.on("error", reject);
-stream.on("error", reject);
-
-readable.pipe(stream);
+        if (!localfilepath) return;
+        const res = await cloudonary.uploader.upload(localfilepath, {
+            resource_type: "auto",
+            folder: "learnHub/courses"
         })
 
+        //Remove the local file after successful upload.
+        fs.unlinkSync(localfilepath)
+
+        return res
     } catch (error) {
 
-        console.log("Upload failed :", error)
+        // Clean up the local file if the upload fails.
+        fs.unlinkSync(localfilepath)
 
         return null
 
@@ -49,32 +38,29 @@ readable.pipe(stream);
 }
 
 //Upload a video file to cloudinary.
-const uploadvideofiles = async (buffer) => {
+const uploadvideofiles = async (localfilepath) => {
 
     try {
 
-        if (!buffer) return;
-        return await new Promise((resolve, reject) => {
-
-            const stream = cloudonary.uploader.upload_stream({
-                resource_type: "video",
-                folder: "learnHub/courses",
-            }, (error, result) => {
-                if (error) return reject(error)
-                resolve(result)
-
-            })
-
-            Readable.from([buffer]).pipe(stream)
+        if (!localfilepath) return;
+        const res = await cloudonary.uploader.upload(localfilepath, {
+            resource_type: "video",
+            folder: "learnHub/courses",
         })
 
+        //Remove the local file after successful upload.
+        fs.unlinkSync(localfilepath)
+
+        return res
     } catch (error) {
 
-        console.log("Upload failed :", error)
+        // Clean up the local file if the upload fails.
+        fs.unlinkSync(localfilepath)
 
-        return null
+        return console.log(error)
 
     }
+
 
 }
 
