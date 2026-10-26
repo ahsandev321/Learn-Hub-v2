@@ -8,7 +8,6 @@ function UseAllCourses() {
 
     const [course, setcoures] = useState([])
 
-
     //Fetch all courses when the hook first loads.
     useEffect(() => {
 
@@ -33,7 +32,6 @@ function UseAllCourses() {
 
 
             }
-
 
         })()
     }, [])
