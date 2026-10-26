@@ -1,5 +1,6 @@
 const cloudonary = require("cloudinary").v2
-const fs = require("fs")
+
+const {Readable} = require('stream')
 
 
 // Configure cloudinary using environment variables.
@@ -11,24 +12,29 @@ cloudonary.config({
 
 
 //Upload a file to cloudinary and remove the local file after processing.
-const uploadfiles = async (localfilepath) => {
+const uploadfiles = async (buffer) => {
 
     try {
 
-        if (!localfilepath) return;
-        const res = await cloudonary.uploader.upload(localfilepath, {
-            resource_type: "auto",
-            folder: "learnHub/courses"
+        if (!buffer) return;
+
+        return await new Promise((resolve, reject) => {
+
+            const stream = cloudonary.uploader.upload_stream({
+                resource_type: "auto",
+                folder: "learnHub/courses"
+            }, (error, result) => {
+                if (error) return reject(error)
+                resolve(result)
+
+            })
+
+            Readable.from([buffer]).pipe(stream)
         })
 
-        //Remove the local file after successful upload.
-        fs.unlinkSync(localfilepath)
-
-        return res
     } catch (error) {
 
-        // Clean up the local file if the upload fails.
-        fs.unlinkSync(localfilepath)
+        console.log("Upload failed :", error)
 
         return null
 
@@ -38,29 +44,32 @@ const uploadfiles = async (localfilepath) => {
 }
 
 //Upload a video file to cloudinary.
-const uploadvideofiles = async (localfilepath) => {
+const uploadvideofiles = async (buffer) => {
 
     try {
 
-        if (!localfilepath) return;
-        const res = await cloudonary.uploader.upload(localfilepath, {
-            resource_type: "video",
-            folder: "learnHub/courses",
+        if (!buffer) return;
+        return await new Promise((resolve, reject) => {
+
+            const stream = cloudonary.uploader.upload_stream({
+                resource_type: "video",
+                folder: "learnHub/courses",
+            }, (error, result) => {
+                if (error) return reject(error)
+                resolve(result)
+
+            })
+
+            Readable.from([buffer]).pipe(stream)
         })
 
-        //Remove the local file after successful upload.
-        fs.unlinkSync(localfilepath)
-
-        return res
     } catch (error) {
 
-        // Clean up the local file if the upload fails.
-        fs.unlinkSync(localfilepath)
+        console.log("Upload failed :", error)
 
-        return console.log(error)
+        return null
 
     }
-
 
 }
 

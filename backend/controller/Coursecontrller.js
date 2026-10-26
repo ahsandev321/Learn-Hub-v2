@@ -15,7 +15,7 @@ const addCourses = async (req, res) => {
 
    try {
 
-      const courseImage = await uploadfiles(req.file.path)
+      const courseImage = await uploadfiles(req.file.buffer)
 
       if (!courseImage) {
          return (
