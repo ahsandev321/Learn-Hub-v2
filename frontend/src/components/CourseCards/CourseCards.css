@@ -10,7 +10,6 @@
     height: auto;
     overflow: hidden;
     margin: auto;
-    padding-right: 10px;
     margin-top: 20px;
     box-shadow: 7px 7px 20px rgb(199, 198, 198);
     padding-bottom: 30px;
@@ -55,15 +54,15 @@
 
 /*Course title styling.*/
 .allcourses-card-text-heading-section {
-    width: 100%;
-    height: 25px;
+     width: 100%;
+    height: 70px;
     max-height: 200px;
     margin-top: 20px;
     padding-left: 25px;
-    font-size: 15px;
+    font-size: 12px;
     text-align: start;
     color: green;
-    overflow: hidden;
+    overflow: auto;
 }
 
 /*Course title height adjustment.*/

@@ -54,7 +54,7 @@ const updateVideo = async (req, res) => {
         const video = await Video.findById(req.params.id)
 
         if (!video) {
-            console.log("video not found")
+            return console.log("video not found")
         }
 
         //Upload the new video and remove the old file.
@@ -62,8 +62,10 @@ const updateVideo = async (req, res) => {
 
             const editVideo = await uploadvideofiles(req.file.buffer)
 
-            const result = await deletefile(video.videoPublicId, "video")
+            const oldPublicId = video.videoPublicId
 
+            const result = await deletefile(oldPublicId, "video")
+            
             if (!result || result.result !== "ok") {
                 throw new Error("Video deletion failed")
             }
